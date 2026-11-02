@@ -1,0 +1,84 @@
+framework,framework_id,control,resource,reason,scope,region
+CIS AWS v3.0.0,1.4,1.4 Ensure no 'root' user account access key exists,koala-nonprod,Root user has active access keys,222222222222,global
+CIS AWS v3.0.0,1.8,1.8 Ensure IAM password policy requires minimum length of 14 or greater,koala-nonprod,Minimum password length is 8,222222222222,global
+CIS AWS v3.0.0,2.2.1,2.2.1 Ensure EBS Volume Encryption is Enabled in all Regions (per-volume proxy),vol-0004k,Volume not encrypted,111111111111,ap-southeast-2
+CIS AWS v3.0.0,2.2.1,2.2.1 Ensure EBS Volume Encryption is Enabled in all Regions (per-volume proxy),vol-0006k,Volume not encrypted,111111111111,ap-southeast-2
+CIS AWS v3.0.0,3.5,3.5 Ensure CloudTrail logs are encrypted at rest using KMS CMKs,nonprod-trail,Not encrypted with KMS key,222222222222,ap-southeast-2
+CIS AWS v3.0.0,1.5,1.5 Ensure MFA is enabled for the 'root' user account,koala-nonprod,Root MFA not enabled,222222222222,global
+CIS AWS v3.0.0,1.12,1.12 Ensure credentials unused for 45 days or greater are disabled,finn.oconnor,Password last used: 200 days ago; access key last used: no key,222222222222,global
+CIS AWS v3.0.0,1.12,1.12 Ensure credentials unused for 45 days or greater are disabled,isla.brown,Password last used: 60 days ago; access key last used: no key,111111111111,global
+CIS AWS v3.0.0,1.12,1.12 Ensure credentials unused for 45 days or greater are disabled,svc-ci-deploy,Password last used: no password; access key last used: 95 days ago,222222222222,global
+CIS AWS v3.0.0,1.12,1.12 Ensure credentials unused for 45 days or greater are disabled,jack.wilson,Password last used: 120 days ago; access key last used: no key,222222222222,global
+CIS AWS v3.0.0,1.12,1.12 Ensure credentials unused for 45 days or greater are disabled,svc-backup,Password last used: no password; access key last used: 95 days ago,111111111111,global
+CIS AWS v3.0.0,2.1.4,2.1.4 Ensure that S3 Buckets are configured with 'Block public access (bucket settings)',koala-backups-prod,Block public access off,222222222222,ap-southeast-2
+CIS AWS v3.0.0,5.3,5.3 Ensure no security groups allow ingress from ::/0 to remote server administration ports,sg-0f06 (legacy-ftp:22),Ingress ::/0 to port 22,111111111111,ap-southeast-2
+CIS AWS v3.0.0,1.14,1.14 Ensure access keys are rotated every 90 days or less,kate.nguyen,Oldest active key is 400 days old,222222222222,global
+CIS AWS v3.0.0,1.14,1.14 Ensure access keys are rotated every 90 days or less,chloe.martin,Oldest active key is 130 days old,111111111111,global
+CIS AWS v3.0.0,1.14,1.14 Ensure access keys are rotated every 90 days or less,svc-ci-deploy,Oldest active key is 400 days old,222222222222,global
+CIS AWS v3.0.0,1.14,1.14 Ensure access keys are rotated every 90 days or less,alice.ng,Oldest active key is 130 days old,111111111111,global
+CIS AWS v3.0.0,1.14,1.14 Ensure access keys are rotated every 90 days or less,svc-backup,Oldest active key is 130 days old,111111111111,global
+CIS AWS v3.0.0,2.3.3,2.3.3 Ensure that public access is not given to RDS Instance,freight-core-db,Instance is publicly accessible,111111111111,ap-southeast-2
+CIS AWS v3.0.0,1.10,1.10 Ensure MFA is enabled for all IAM users that have a console password,chloe.martin,Console user without MFA,111111111111,global
+CIS AWS v3.0.0,2.3.1,2.3.1 Ensure that encryption-at-rest is enabled for RDS Instances,customer-portal-db,Storage not encrypted,222222222222,ap-southeast-2
+CIS AWS v3.0.0,2.3.1,2.3.1 Ensure that encryption-at-rest is enabled for RDS Instances,reporting-replica,Storage not encrypted,111111111111,ap-southeast-2
+CIS AWS v3.0.0,5.2,5.2 Ensure no security groups allow ingress from 0.0.0.0/0 to remote server administration ports,sg-0d04 (win-jump:3389),Ingress 0.0.0.0/0 to port 3389,111111111111,ap-southeast-2
+CIS AWS v3.0.0,5.2,5.2 Ensure no security groups allow ingress from 0.0.0.0/0 to remote server administration ports,sg-0b02 (bastion:22),Ingress 0.0.0.0/0 to port 22,111111111111,ap-southeast-2
+Essential Eight ML1,Patch applications,"Patch applications: Office suites, browsers, email clients, PDF software and security products patched within two weeks",KF-LT-002,Oldest missing application patch released 45 days ago (limit 14),workstation,on-prem
+Essential Eight ML1,Patch applications,"Patch applications: Office suites, browsers, email clients, PDF software and security products patched within two weeks",KF-SRV-12,Oldest missing application patch released 18 days ago (limit 14),server,on-prem
+Essential Eight ML1,Patch applications,"Patch applications: Office suites, browsers, email clients, PDF software and security products patched within two weeks",KF-LT-005,Oldest missing application patch released 45 days ago (limit 14),workstation,on-prem
+Essential Eight ML1,Patch applications,"Patch applications: Office suites, browsers, email clients, PDF software and security products patched within two weeks",KF-LT-010,Oldest missing application patch released 18 days ago (limit 14),workstation,on-prem
+Essential Eight ML1,Patch applications,"Patch applications: Office suites, browsers, email clients, PDF software and security products patched within two weeks",KF-LT-004,Oldest missing application patch released 45 days ago (limit 14),workstation,on-prem
+Essential Eight ML1,Patch operating systems,"Patch operating systems: OS patched within two weeks (internet-facing) or one month (workstations, other servers)",KF-SRV-15,OS patch age 35 days (limit 31),server,on-prem
+Essential Eight ML1,Patch operating systems,"Patch operating systems: OS patched within two weeks (internet-facing) or one month (workstations, other servers)",KF-LT-002,OS patch age 60 days (limit 31),workstation,on-prem
+Essential Eight ML1,Patch operating systems,"Patch operating systems: OS patched within two weeks (internet-facing) or one month (workstations, other servers)",KF-LT-000,OS patch age 35 days (limit 31),workstation,on-prem
+Essential Eight ML1,Patch operating systems,"Patch operating systems: OS patched within two weeks (internet-facing) or one month (workstations, other servers)",KF-LT-001,OS patch age 35 days (limit 31),workstation,on-prem
+Essential Eight ML1,Patch operating systems,"Patch operating systems: OS patched within two weeks (internet-facing) or one month (workstations, other servers)",KF-SRV-12,OS patch age 20 days (limit 14),server,on-prem
+Essential Eight ML1,Patch operating systems,"Patch operating systems: OS patched within two weeks (internet-facing) or one month (workstations, other servers)",KF-SRV-14,OS patch age 35 days (limit 14),server,on-prem
+Essential Eight ML1,Patch operating systems,"Patch operating systems: OS patched within two weeks (internet-facing) or one month (workstations, other servers)",KF-LT-011,OS patch age 60 days (limit 31),workstation,on-prem
+Essential Eight ML1,Patch operating systems,"Patch operating systems: OS patched within two weeks (internet-facing) or one month (workstations, other servers)",KF-LT-004,OS patch age 35 days (limit 31),workstation,on-prem
+Essential Eight ML1,Multi-factor authentication,"Multi-factor authentication: MFA used to authenticate users to the organisation's online services (AWS console, Entra ID)",chloe.martin,AWS console user without MFA,111111111111,aws
+Essential Eight ML1,Patch operating systems,Patch operating systems: Operating systems that are no longer supported by vendors are replaced,KF-SRV-12,Windows Server 2012 R2 is no longer vendor supported,server,on-prem
+Essential Eight ML1,Patch operating systems,Patch operating systems: Operating systems that are no longer supported by vendors are replaced,KF-SRV-14,Windows Server 2012 R2 is no longer vendor supported,server,on-prem
+Essential Eight ML1,Restrict administrative privileges,"Restrict administrative privileges: Privileged user accounts are prevented from accessing the internet, email and web services",KF-LT-008,Privileged accounts can reach internet/email,workstation,on-prem
+Essential Eight ML1,Restrict administrative privileges,"Restrict administrative privileges: Privileged user accounts are prevented from accessing the internet, email and web services",KF-LT-009,Privileged accounts can reach internet/email,workstation,on-prem
+Essential Eight ML1,Restrict administrative privileges,"Restrict administrative privileges: Privileged user accounts are prevented from accessing the internet, email and web services",KF-SRV-14,Privileged accounts can reach internet/email,server,on-prem
+Essential Eight ML1,Restrict administrative privileges,"Restrict administrative privileges: Privileged user accounts are prevented from accessing the internet, email and web services",KF-LT-006,Privileged accounts can reach internet/email,workstation,on-prem
+Essential Eight ML1,Application control,Application control: Application control is implemented on workstations,KF-LT-001,No application control,workstation,on-prem
+Essential Eight ML1,Application control,Application control: Application control is implemented on workstations,KF-LT-011,No application control,workstation,on-prem
+Essential Eight ML1,Application control,Application control: Application control is implemented on workstations,KF-LT-004,No application control,workstation,on-prem
+Essential Eight ML1,Restrict Microsoft Office macros,Restrict Microsoft Office macros: Microsoft Office macros in files originating from the internet are blocked,KF-LT-000,Internet macros not blocked,workstation,on-prem
+Essential Eight ML1,Restrict Microsoft Office macros,Restrict Microsoft Office macros: Microsoft Office macros in files originating from the internet are blocked,KF-LT-003,Internet macros not blocked,workstation,on-prem
+Essential Eight ML1,Restrict Microsoft Office macros,Restrict Microsoft Office macros: Microsoft Office macros in files originating from the internet are blocked,KF-LT-009,Internet macros not blocked,workstation,on-prem
+Essential Eight ML1,Restrict Microsoft Office macros,Restrict Microsoft Office macros: Microsoft Office macros in files originating from the internet are blocked,KF-LT-006,Internet macros not blocked,workstation,on-prem
+Essential Eight ML1,Restrict Microsoft Office macros,Restrict Microsoft Office macros: Microsoft Office macros in files originating from the internet are blocked,KF-LT-011,Internet macros not blocked,workstation,on-prem
+Essential Eight ML1,Restrict Microsoft Office macros,Restrict Microsoft Office macros: Microsoft Office macros in files originating from the internet are blocked,KF-LT-004,Internet macros not blocked,workstation,on-prem
+Essential Eight ML1,User application hardening,User application hardening: Web browsers do not process Java or web advertisements from the internet,KF-LT-002,"Java blocked: false, ads blocked: false",workstation,on-prem
+Essential Eight ML1,User application hardening,User application hardening: Web browsers do not process Java or web advertisements from the internet,KF-LT-001,"Java blocked: true, ads blocked: false",workstation,on-prem
+Essential Eight ML1,Regular backups,Regular backups: Backups are performed and restoration is tested (org threshold: test recorded in last 12 months),KF-LT-000,No backup configured,workstation,on-prem
+Essential Eight ML1,Regular backups,Regular backups: Backups are performed and restoration is tested (org threshold: test recorded in last 12 months),KF-LT-004,No backup configured,workstation,on-prem
+Koala Freight custom,KF-04,KF-04 S3 buckets have default encryption and versioning,koala-data-lake-raw,"encryption=true, versioning=false",222222222222,ap-southeast-2
+Koala Freight custom,KF-04,KF-04 S3 buckets have default encryption and versioning,koala-finance-exports,"encryption=true, versioning=false",111111111111,ap-southeast-2
+Koala Freight custom,KF-04,KF-04 S3 buckets have default encryption and versioning,koala-cloudtrail-logs,"encryption=true, versioning=false",111111111111,ap-southeast-2
+Koala Freight custom,KF-04,KF-04 S3 buckets have default encryption and versioning,koala-tmp-uploads,"encryption=true, versioning=false",111111111111,ap-southeast-2
+Koala Freight custom,KF-AZ-01,KF-AZ-01 Azure storage: secure transfer required and no anonymous blob access,kfpublicsite,"https_only=true, public_blob_access=true",sub-koala-corp,australiaeast
+Koala Freight custom,KF-AZ-01,KF-AZ-01 Azure storage: secure transfer required and no anonymous blob access,kfdevscratch,"https_only=false, public_blob_access=false",sub-koala-dev,australiaeast
+Koala Freight custom,KF-AZ-02,KF-AZ-02 Azure NSGs: no inbound 22/3389 from the internet,nsg-jump/allow-rdp,Allow Internet to port 3389,sub-koala-dev,australiaeast
+Koala Freight custom,KF-AZ-02,KF-AZ-02 Azure NSGs: no inbound 22/3389 from the internet,nsg-dev/allow-ssh,Allow 0.0.0.0/0 to port 22,sub-koala-corp,australiaeast
+Koala Freight custom,KF-AZ-03,KF-AZ-03 Azure Key Vaults: soft delete and purge protection on,kv-koala-ci,"soft_delete=true, purge_protection=false",sub-koala-corp,australiaeast
+Koala Freight custom,KF-AZ-03,KF-AZ-03 Azure Key Vaults: soft delete and purge protection on,kv-koala-dev,"soft_delete=false, purge_protection=false",sub-koala-dev,australiaeast
+Koala Freight custom,KF-01,KF-01 Data stores carry owner and data-classification tags,koala-data-lake-raw,"owner=MISSING, data-classification=official",222222222222,ap-southeast-2
+Koala Freight custom,KF-01,KF-01 Data stores carry owner and data-classification tags,koala-freight-manifests,"owner=MISSING, data-classification=public",111111111111,ap-southeast-2
+Koala Freight custom,KF-01,KF-01 Data stores carry owner and data-classification tags,koala-website-static,"owner=ops, data-classification=MISSING",222222222222,ap-southeast-2
+Koala Freight custom,KF-01,KF-01 Data stores carry owner and data-classification tags,koala-tmp-uploads,"owner=data, data-classification=MISSING",111111111111,ap-southeast-2
+Koala Freight custom,KF-01,KF-01 Data stores carry owner and data-classification tags,vol-0007k,"owner=ops, data-classification=MISSING",222222222222,ap-southeast-2
+Koala Freight custom,KF-01,KF-01 Data stores carry owner and data-classification tags,kfarchive,"owner=data, data-classification=MISSING",sub-koala-dev,australiaeast
+Koala Freight custom,KF-01,KF-01 Data stores carry owner and data-classification tags,kfpublicsite,"owner=MISSING, data-classification=official-sensitive",sub-koala-corp,australiaeast
+Koala Freight custom,KF-01,KF-01 Data stores carry owner and data-classification tags,kfdevscratch,"owner=ops, data-classification=MISSING",sub-koala-dev,australiaeast
+Koala Freight custom,KF-02,KF-02 No IAM users left unused for more than 90 days,finn.oconnor,Most recent activity 200 days ago,222222222222,global
+Koala Freight custom,KF-02,KF-02 No IAM users left unused for more than 90 days,svc-ci-deploy,Most recent activity 95 days ago,222222222222,global
+Koala Freight custom,KF-02,KF-02 No IAM users left unused for more than 90 days,jack.wilson,Most recent activity 120 days ago,222222222222,global
+Koala Freight custom,KF-02,KF-02 No IAM users left unused for more than 90 days,svc-backup,Most recent activity 95 days ago,111111111111,global
+Koala Freight custom,KF-03,KF-03 Restores tested within the last 90 days (servers and databases),KF-SRV-13,Restore last tested 120 days ago,server,on-prem
+Koala Freight custom,KF-03,KF-03 Restores tested within the last 90 days (servers and databases),KF-SRV-14,Restore last tested 300 days ago,server,on-prem
+Koala Freight custom,KF-03,KF-03 Restores tested within the last 90 days (servers and databases),customer-portal-db,Retention 0 days; restore last tested 60 days ago,222222222222,ap-southeast-2
+Koala Freight custom,KF-03,KF-03 Restores tested within the last 90 days (servers and databases),reporting-replica,Retention 35 days; restore last tested 150 days ago,111111111111,ap-southeast-2

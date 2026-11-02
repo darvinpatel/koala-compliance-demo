@@ -1,0 +1,1717 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Powerpipe Report</title>
+  <style>
+    /**
+/*  */
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+html {
+  font-size: 12px;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+
+/*
+**/
+    /**
+/*  */
+:root {
+  --color-border-muted: #d8dee4;
+  --color-border-default: #30363d;
+  --color-neutral-muted: #6f819433;
+  --color-fg-muted: #8b949e;
+  --color-alarm: red;
+  --color-error: red;
+  --color-info: #2f5f95;
+  --color-ok: green;
+  --color-skip: #949595;
+}
+
+html {
+  font-size: 14px;
+}
+
+h1 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 2em;
+}
+
+h2 {
+  padding-top: 1em;
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+h3 {
+  padding-top: 0.75em;
+  font-size: 1.25em;
+}
+
+h4 {
+  padding-top: 0.5em;
+  font-size: 1em;
+}
+
+footer {
+  margin-top: 3em;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  padding: 1em;
+}
+
+.header {
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.header .title {
+  word-break: break-word;
+}
+
+.header a {
+  display: flex;
+}
+
+.header .logo {
+  width: 200px;
+  margin-left: 10px;
+}
+
+table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+  margin-top: 0;
+  padding-top: 0.2em;
+  margin-bottom: 16px;
+}
+
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid var(--color-border-muted);
+}
+
+table th {
+  font-weight: 600;
+}
+
+table tr {
+  border-top: 1px solid var(--color-border-muted);
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+  Liberation Mono, monospace;
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: var(--color-neutral-muted);
+  border-radius: 6px;
+}
+
+blockquote {
+  padding: 0 1em;
+  margin-left: 0;
+  color: var(--color-fg-muted);
+  border-left: 0.25em solid var(--color-border-default);
+}
+
+.summary-total-ok.highlight {
+  font-weight: 600;
+  color: var(--color-ok);
+}
+
+.summary-total-alarm.highlight {
+  font-weight: 600;
+  color: var(--color-alarm);
+}
+
+.summary-total-error.highlight {
+  font-weight: 600;
+  color: var(--color-alarm);
+}
+/*
+**/
+  </style>
+  <meta charset="UTF-8">
+  <link rel="icon" href='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEwMDAgMTAwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAwMCAxMDAwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+IDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+IC5zdDB7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRkZGRkZGO30gLnN0MXtmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiMyMjIwMTc7fSAuc3Qye2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6I0M3MjcyRTt9IDwvc3R5bGU+IDxnIGlkPSJiZyI+IDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05MTkuNSw2NTUuNmwtMjY0LDI2NGMtODUuNiw4NS42LTIyNS42LDg1LjYtMzExLjEsMGwtMjY0LTI2NEMtNS4xLDU3MC01LjEsNDMwLDgwLjUsMzQ0LjRsMjY0LTI2NCBDNDMwLTUuMSw1NzAtNS4xLDY1NS42LDgwLjVsMjY0LDI2NEMxMDA1LjEsNDMwLDEwMDUuMSw1NzAsOTE5LjUsNjU1LjZ6Ii8+IDwvZz4gPGcgaWQ9IkxvZ28iPiA8Zz4gPHBhdGggaWQ9IkJvdHRvbV8xXyIgY2xhc3M9InN0MSIgZD0iTTQ3MC4zLDcwNC4zTDQ3MC4zLDcwNC4zYzEzLjksMTQuOSwzNS4yLDIzLjcsNDguMywxMC42bDQwLjUtNDAuNWwxNTUuOC0xNTUuOCBjMjUuMi0yNS4yLTMwLjYtODAuOS01NS43LTU1LjdsLTU3LjUsNTcuNWwzLDNsMC4zLDAuM2M2LjgsNy4yLDYuNiwxOC41LTAuMywyNS41bC0zLjMsMy40TDU4NSw1NjguOGwtMTUuOS0xNS45bDAsMEw0NDcsNDMwLjkgbDAsMEw0MzEuMiw0MTVsMTYuMy0xNi4ybDMuMy0zLjRjNy03LDE4LjMtNy4xLDI1LjQtMC4zbDAuMywwLjNsMywzTDU2NiwzMTJjNjEuNS02MS41LDE2MS45LTYxLjUsMjIzLjUsMGw3Ni40LDc2LjMgYzYxLjQsNjEuNCw2MS41LDE2MiwwLDIyMy41TDY4MS4xLDc5Ni41bC02OS40LDY5LjRjLTYxLjUsNjEuNS0xNjIuMSw2MS40LTIyMy41LDBsLTk2LjktOTdjNTkuNyw5LjUsMTIzLTguNywxNjguOS01NC42IEw0NzAuMyw3MDQuM3oiLz4gPHBhdGggaWQ9IlRvcF8xXyIgY2xhc3M9InN0MiIgZD0iTTUyOS43LDI5NS43TDUyOS43LDI5NS43Yy0xMy45LTE1LTM1LjItMjMuNy00OC4zLTEwLjZsLTQwLjUsNDAuNUwyODUuMSw0ODEuNCBjLTI1LjIsMjUuMiwzMC42LDgwLjksNTUuNyw1NS43bDU3LjUtNTcuNWwtMy0zbC0wLjMtMC4zYy02LjgtNy4yLTYuNi0xOC41LDAuMy0yNS41bDMuNC0zLjNsMTYuMi0xNi4zbDE1LjksMTUuOWwwLDBsMTIyLjEsMTIyIGwwLDBsMTUuOSwxNS45bC0xNi4zLDE2LjNsLTMuNCwzLjNjLTcsNy0xOC4zLDcuMS0yNS40LDAuM2wtMC4zLTAuM2wtMy0zTDQzMy45LDY4OGMtNjEuNiw2MS41LTE2Miw2MS41LTIyMy41LDBMMTM0LDYxMS43IGMtNjEuNC02MS40LTYxLjUtMTYyLDAtMjIzLjVsMTg0LjgtMTg0LjdsNjkuNC02OS40YzYxLjUtNjEuNSwxNjIuMS02MS40LDIyMy41LDBsOTYuOSw5N2MtNTkuNy05LjUtMTIzLDguNy0xNjguOSw1NC42IEw1MjkuNywyOTUuN3oiLz4gPC9nPiA8L2c+IDwvc3ZnPg==' type="image/svg+xml" sizes="any">
+</head>
+
+<body>
+  <div class="container">
+    
+    
+    
+    
+<section class="group">
+  <div class="header">
+    <h1 class="title">Koala Freight custom controls</h1>
+    <a href="https://steampipe.io" rel="noopener noreferrer" target="_blank"><img class="logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMzQ3LjA5NCAyMDIuNTU5Ij48ZGVmcz48c3R5bGU+LmEsLmJ7ZmlsbDojMjIyMDE3O30uYSwuY3tmaWxsLXJ1bGU6ZXZlbm9kZDt9LmN7ZmlsbDojYzcyNTJkO308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iYSIgZD0iTTEzMzMuMiwyMjQuMDUzaDg1Ljc2NFYxOTcuMDI3aC03OS4zNTVhNC4xMzcsNC4xMzcsMCwwLDEtNC4xMjQtNC4xMjN2LTUuNjdIMTM5OC44YTI0Ljc5LDI0Ljc5LDAsMCwwLDI0Ljc0NC0yNC43NDJWMTQ4LjEzMWEyNC43OTEsMjQuNzkxLDAsMCwwLTI0Ljc0NC0yNC43NDJIMTMzMy4yYTI0Ljc5MSwyNC43OTEsMCwwLDAtMjQuNzQ0LDI0Ljc0MnY1MS4xODFhMjQuNzksMjQuNzksMCwwLDAsMjQuNzQ0LDI0Ljc0MVptMi4yODUtNjMuODQ1VjE1NC41NGE0LjEyOSw0LjEyOSwwLDAsMSw0LjEyNC00LjEyM2g1Mi43ODhhNC4xMjksNC4xMjksMCwwLDEsNC4xMjQsNC4xMjN2MS41NDRhNC4xMyw0LjEzLDAsMCwxLTQuMTI0LDQuMTI0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTc2LjQ1MyAtNzIuMjIpIi8+PHBhdGggY2xhc3M9ImEiIGQ9Ik0xMjkzLjg1MSwxNzAuMTV2MjkuNzM5YTI0Ljc4OSwyNC43ODksMCwwLDEtMjQuNzQ1LDI0Ljc0aC02My4zMTl2MzAuOTc4aC0yNy4wMjFWMTQ4LjEzMWEyNC43ODcsMjQuNzg3LDAsMCwxLDI0Ljc0LTI0Ljc0Mmg2NS42YTI0Ljc5MSwyNC43OTEsMCwwLDEsMjQuNzQ1LDI0Ljc0MlYxNzAuMTVabS0zNi4wOCwyNy40NTNoNC45MzFhNC4xMzQsNC4xMzQsMCwwLDAsNC4xMjQtNC4xMjNWMTgwLjcwN2MwLS4yMjcsMC0uNDU3LDAtLjY5VjE3Ny44N2gwdi03LjcyaDB2LTIuMTQ0YzAtLjIzMywwLS40NjUsMC0uNjkyVjE1NC41NGE0LjEzNCw0LjEzNCwwLDAsMC00LjEyNC00LjEyM2gtNTIuNzg4YTQuMTMzLDQuMTMzLDAsMCwwLTQuMTIzLDQuMTIzdjEyLjc3NGMwLC4yMjcsMCwuNDU5LDAsLjY5MnYyLjE0NGgwbDAsMy44NiwwLDMuODZoMHYyLjE0N2wwLC41ODR2MTdoNTEuOThaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNzYuNDUzIC03Mi4yMikiLz48cmVjdCBjbGFzcz0iYiIgeD0iMTA2MC42NzciIHk9IjUxLjE2OSIgd2lkdGg9IjI3LjAyOSIgaGVpZ2h0PSIxMDAuNjg4Ii8+PHBhdGggY2xhc3M9ImEiIGQ9Ik0xMTIyLjUyNywxNzAuMTV2MjkuNzM5YTI0Ljc4OCwyNC43ODgsMCwwLDEtMjQuNzQ0LDI0Ljc0aC02My4zMTl2MzAuOTc4aC0yNy4wMjZWMTQ4LjEzMWEyNC43OTIsMjQuNzkyLDAsMCwxLDI0Ljc0NS0yNC43NDJoNjUuNmEyNC43OSwyNC43OSwwLDAsMSwyNC43NDQsMjQuNzQyVjE3MC4xNVpNMTA4Ni40NDQsMTk3LjZoNC45MzVhNC4xMzcsNC4xMzcsMCwwLDAsNC4xMjQtNC4xMjNWMTc3Ljg3aDB2LTcuNzJoMFYxNTQuNTRhNC4xMzcsNC4xMzcsMCwwLDAtNC4xMjQtNC4xMjNoLTUyLjc4OGE0LjEzNyw0LjEzNywwLDAsMC00LjEyNyw0LjEyM3YxNS42MWgwdjcuNzJoMFYxOTcuNmg1MS45OFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC03Ni40NTMgLTcyLjIyKSIvPjxwYXRoIGNsYXNzPSJhIiBkPSJNOTEyLjUxNiwxMjMuMzg5aDU1LjU3NmEyNC43OTEsMjQuNzkxLDAsMCwxLDI0Ljc0NCwyNC43NDJ2NzUuOTQ2SDk2NS44MVYxNzcuODdoMGwwLTkuODY0YzAtLjIzMywwLS40NjUsMC0uNjkyVjE1NC41NGE0LjEzNCw0LjEzNCwwLDAsMC00LjEyMy00LjEyM0g5MjYuMDN2NzMuNjZIODk5LjAwNXYtNzMuNjZIODYzLjM0OGE0LjEzNCw0LjEzNCwwLDAsMC00LjEyNCw0LjEyM3YxMi43NzRjMCwuMjI3LDAsLjQ1OSwwLC42OTJsMCw5Ljg2NGgwbDAsNDYuMjA3SDgzMi4yVjE0OC4xMzFhMjQuNzksMjQuNzksMCwwLDEsMjQuNzQtMjQuNzQyaDU1LjU3OFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC03Ni40NTMgLTcyLjIyKSIvPjxwYXRoIGNsYXNzPSJhIiBkPSJNNzkyLjg1MiwxMjMuMzg5SDcwNy4wODl2MjcuMDI4aDc5LjM1NGE0LjEzNSw0LjEzNSwwLDAsMSw0LjEyNCw0LjEyM3Y1LjY2OEg3MjcuMjQ5YTI0Ljc5MSwyNC43OTEsMCwwLDAtMjQuNzQ0LDI0Ljc0NnYxNC4zNThhMjQuNzg5LDI0Ljc4OSwwLDAsMCwyNC43NDQsMjQuNzQxaDY1LjZBMjQuNzkxLDI0Ljc5MSwwLDAsMCw4MTcuNiwxOTkuMzEyVjE0OC4xMzFhMjQuNzkyLDI0Ljc5MiwwLDAsMC0yNC43NDUtMjQuNzQyWm0tMi4yODUsNjMuODQ1djUuNjdhNC4xMjgsNC4xMjgsMCwwLDEtNC4xMjQsNC4xMjNINzMzLjY1NWE0LjEyOSw0LjEyOSwwLDAsMS00LjEyMy00LjEyM1YxOTEuMzZhNC4xMzEsNC4xMzEsMCwwLDEsNC4xMjMtNC4xMjZaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNzYuNDUzIC03Mi4yMikiLz48cGF0aCBjbGFzcz0iYSIgZD0iTTYwMS4xMzgsMjI0LjA1M0g2ODYuOVYxOTcuMDI3SDYwNy41NDJhNC4xMzcsNC4xMzcsMCwwLDEtNC4xMjQtNC4xMjN2LTUuNjdoNjMuMzJhMjQuNzksMjQuNzksMCwwLDAsMjQuNzQ0LTI0Ljc0MlYxNDguMTMxYTI0Ljc5MSwyNC43OTEsMCwwLDAtMjQuNzQ0LTI0Ljc0MmgtNjUuNmEyNC43OTEsMjQuNzkxLDAsMCwwLTI0Ljc0NywyNC43NDJ2NTEuMTgxYTI0Ljc5MSwyNC43OTEsMCwwLDAsMjQuNzQ3LDI0Ljc0MVptMi4yOC02My44NDVWMTU0LjU0YTQuMTMsNC4xMywwLDAsMSw0LjEyNC00LjEyM2g1Mi43OTJhNC4xMyw0LjEzLDAsMCwxLDQuMTIxLDQuMTIzdjEuNTQ0YTQuMTMxLDQuMTMxLDAsMCwxLTQuMTIxLDQuMTI0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTc2LjQ1MyAtNzIuMjIpIi8+PHBvbHlnb24gY2xhc3M9ImEiIHBvaW50cz0iMzg0Ljg4OSA1MS4xNjkgMzg0Ljg4OSA3OC4zMzggNDIxLjc4NiA3OC4zMzggNDIxLjc4NiAxNTEuODMyIDQ0OS40MzYgMTUxLjgzMiA0NDkuNDM2IDc4LjMzOCA0ODYuMzMxIDc4LjMzOCA0ODYuMzMxIDUxLjE2OSAzODQuODg5IDUxLjE2OSIvPjxwYXRoIGNsYXNzPSJhIiBkPSJNMzkwLjUyNiwxODcuMjM0aC0zMi44YTI0Ljc5LDI0Ljc5LDAsMCwxLTI0Ljc0NS0yNC43NDJWMTQ4LjEzMWEyNC43OTEsMjQuNzkxLDAsMCwxLDI0Ljc0NS0yNC43NDJoODkuMDA5djI3LjAyOGgtODIuNmE0LjEzLDQuMTMsMCwwLDAtNC4xMjQsNC4xMjN2MS41NDRhNC4xMzEsNC4xMzEsMCwwLDAsNC4xMjQsNC4xMjRoNjIuNDQzYTI0Ljc5MiwyNC43OTIsMCwwLDEsMjQuNzQyLDI0Ljc0NnYxNC4zNThhMjQuNzg5LDI0Ljc4OSwwLDAsMS0yNC43NDIsMjQuNzQxaC04OS4wMVYxOTcuMDI3aDgyLjZhNC4xMyw0LjEzLDAsMCwwLDQuMTIzLTQuMTIzVjE5MS4zNmE0LjEzMiw0LjEzMiwwLDAsMC00LjEyMy00LjEyNkgzOTAuNTI2WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTc2LjQ1MyAtNzIuMjIpIi8+PHBhdGggY2xhc3M9ImEiIGQ9Ik0xNzAuNDI4LDIyMy43MjNoMGMzLjQyNCwzLjY3Myw4LjY1OSw1LjgxOSwxMS44NzMsMi42bDkuOTQ4LTkuOTUxLDM4LjMwNy0zOC4zYzYuMi02LjItNy41MjItMTkuODgtMTMuNy0xMy42OTNsLTE0LjE0LDE0LjEzNi43MzUuNzMuMDgzLjA4MWE0LjUsNC41LDAsMCwxLS4wODMsNi4yNjNsLS44MjQuODIzLTMuOTk0LDQtMy45LTMuOSwwLDAtMzAtMzAsLjAwNiwwLTMuOS0zLjkxLDQtMy45OTMuODI0LS44MjRhNC40OTIsNC40OTIsMCwwLDEsNi4yNTctLjA3OWwuMDgyLjA3OS43MzcuNzM0LDIxLjI1Mi0yMS4yNDhhMzguOTIsMzguOTIsMCwwLDEsNTQuOTMzLDBsMTguNzcxLDE4Ljc2N2EzOC45NTQsMzguOTU0LDAsMCwxLDAsNTQuOTM3bC00NS40MTYsNDUuNDE4TDIwNS4yLDI2My40NDJhMzguOTQ5LDM4Ljk0OSwwLDAsMS01NC45NDEsMGwtMjMuODI1LTIzLjgzMWE0Ny45Niw0Ny45NiwwLDAsMCw0MS41Mi0xMy40MTNaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNzYuNDUzIC03Mi4yMikiLz48cGF0aCBjbGFzcz0iYyIgZD0iTTE4NS4wMzMsMTIzLjI3NmwtLjAwNywwYy0zLjQyMS0zLjY3NS04LjY1Ni01LjgyNC0xMS44NzEtMi42MDhsLTkuOTQ3LDkuOTUtMzguMzA4LDM4LjNjLTYuMiw2LjIsNy41MjEsMTkuODgxLDEzLjcsMTMuN2wxNC4xNC0xNC4xNDItLjczMy0uNzI5LS4wODMtLjA4M2E0LjQ5Myw0LjQ5MywwLDAsMSwuMDgzLTYuMjYybC44MjQtLjgyMiwzLjk5My00LDMuOSwzLjksMCwwLDMwLDMwLS4wMDcsMCwzLjkwNSwzLjkwOC0zLjk5Miw0LS44My44MmE0LjQ5MSw0LjQ5MSwwLDAsMS02LjI1NC4wODFsLS4wODMtLjA4MS0uNzM0LS43MzUtMjEuMjUyLDIxLjI0NmEzOC45MTcsMzguOTE3LDAsMCwxLTU0LjkzNSwwTDg3Ljc4NiwyMDAuOTY3YTM4Ljk1NSwzOC45NTUsMCwwLDEsMC01NC45MzdMMTMzLjIsMTAwLjYxMWwxNy4wNTYtMTcuMDU1YTM4Ljk1NCwzOC45NTQsMCwwLDEsNTQuOTQxLDBsMjMuODI1LDIzLjgzMUE0Ny45NTUsNDcuOTU1LDAsMCwwLDE4Ny41MDYsMTIwLjhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNzYuNDUzIC03Mi4yMikiLz48L3N2Zz4=" alt="Steampipe Report" /></a>
+  </div>
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>TOTAL</th>
+      <th>67</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="align-center">✅</td>
+      <td>OK</td>
+      <td class="summary-total-ok highlight">41</td>
+    </tr>
+    <tr>
+      <td class="align-center">⇨</td>
+      <td>Skip</td>
+      <td class="summary-total-skip">0</td>
+    </tr>
+    <tr>
+      <td class="align-center">ℹ</td>
+      <td>Info</td>
+      <td class="summary-total-info">0</td>
+    </tr>
+    <tr>
+      <td class="align-center">❌</td>
+      <td>Alarm</td>
+      <td class="summary-total-alarm highlight">26</td>
+    </tr>
+    <tr>
+      <td class="align-center">❗</td>
+      <td>Error</td>
+      <td class="summary-total-error">0</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+  
+  
+<section class="control">
+  <h3>KF-01 Data stores carry owner and data-classification tags</h3>
+
+  
+  <p><em>Koala Freight internal policy control (synthetic).</em></p>
+  
+
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th>OK</th>
+      <th>Skip</th>
+      <th>Info</th>
+      <th>Alarm</th>
+      <th>Error</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="summary-total-ok highlight">18</td>
+      <td class="summary-total-skip">0</td>
+      <td class="summary-total-info">0</td>
+      <td class="summary-total-alarm highlight">8</td>
+      <td class="summary-total-error">0</td>
+      <td>26</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+  
+  
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Reason</th>
+      <th>Dimensions</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-tmp-uploads">❌</td>
+  <td title="Resource: koala-tmp-uploads">owner=data, data-classification=MISSING</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-data-lake-raw">❌</td>
+  <td title="Resource: koala-data-lake-raw">owner=MISSING, data-classification=official</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-website-static">❌</td>
+  <td title="Resource: koala-website-static">owner=ops, data-classification=MISSING</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-freight-manifests">❌</td>
+  <td title="Resource: koala-freight-manifests">owner=MISSING, data-classification=public</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: vol-0007k">❌</td>
+  <td title="Resource: vol-0007k">owner=ops, data-classification=MISSING</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kfarchive">❌</td>
+  <td title="Resource: kfarchive">owner=data, data-classification=MISSING</td>
+  <td>
+    
+    <code>sub-koala-dev</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kfdevscratch">❌</td>
+  <td title="Resource: kfdevscratch">owner=ops, data-classification=MISSING</td>
+  <td>
+    
+    <code>sub-koala-dev</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kfpublicsite">❌</td>
+  <td title="Resource: kfpublicsite">owner=MISSING, data-classification=official-sensitive</td>
+  <td>
+    
+    <code>sub-koala-corp</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-finance-exports">✅</td>
+  <td title="Resource: koala-finance-exports">owner=finance, data-classification=official-sensitive</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-backups-prod">✅</td>
+  <td title="Resource: koala-backups-prod">owner=ops, data-classification=public</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-cloudtrail-logs">✅</td>
+  <td title="Resource: koala-cloudtrail-logs">owner=ops, data-classification=public</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-customer-portal-assets">✅</td>
+  <td title="Resource: koala-customer-portal-assets">owner=platform, data-classification=official</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: vol-0003k">✅</td>
+  <td title="Resource: vol-0003k">owner=data, data-classification=public</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: vol-0000k">✅</td>
+  <td title="Resource: vol-0000k">owner=finance, data-classification=official-sensitive</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: vol-0002k">✅</td>
+  <td title="Resource: vol-0002k">owner=ops, data-classification=official-sensitive</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: vol-0001k">✅</td>
+  <td title="Resource: vol-0001k">owner=ops, data-classification=official</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: vol-0006k">✅</td>
+  <td title="Resource: vol-0006k">owner=data, data-classification=official</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: vol-0004k">✅</td>
+  <td title="Resource: vol-0004k">owner=finance, data-classification=official</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: vol-0008k">✅</td>
+  <td title="Resource: vol-0008k">owner=data, data-classification=official</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: vol-0005k">✅</td>
+  <td title="Resource: vol-0005k">owner=data, data-classification=official</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: vol-0009k">✅</td>
+  <td title="Resource: vol-0009k">owner=data, data-classification=official-sensitive</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: freight-core-db">✅</td>
+  <td title="Resource: freight-core-db">owner=ops, data-classification=official-sensitive</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: dev-sandbox-db">✅</td>
+  <td title="Resource: dev-sandbox-db">owner=platform, data-classification=official-sensitive</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: reporting-replica">✅</td>
+  <td title="Resource: reporting-replica">owner=data, data-classification=official</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: customer-portal-db">✅</td>
+  <td title="Resource: customer-portal-db">owner=data, data-classification=official</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kfcorpdocs">✅</td>
+  <td title="Resource: kfcorpdocs">owner=ops, data-classification=official-sensitive</td>
+  <td>
+    
+    <code>sub-koala-corp</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+  </tbody>
+</table>
+
+  
+  
+</section>
+
+  
+  
+<section class="control">
+  <h3>KF-02 No IAM users left unused for more than 90 days</h3>
+
+  
+  <p><em>Koala Freight internal policy control (synthetic).</em></p>
+  
+
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th>OK</th>
+      <th>Skip</th>
+      <th>Info</th>
+      <th>Alarm</th>
+      <th>Error</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="summary-total-ok highlight">10</td>
+      <td class="summary-total-skip">0</td>
+      <td class="summary-total-info">0</td>
+      <td class="summary-total-alarm highlight">4</td>
+      <td class="summary-total-error">0</td>
+      <td>14</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+  
+  
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Reason</th>
+      <th>Dimensions</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+<tr>
+  <td class="align-center" title="Resource: finn.oconnor">❌</td>
+  <td title="Resource: finn.oconnor">Most recent activity 200 days ago</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: jack.wilson">❌</td>
+  <td title="Resource: jack.wilson">Most recent activity 120 days ago</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: svc-ci-deploy">❌</td>
+  <td title="Resource: svc-ci-deploy">Most recent activity 95 days ago</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: svc-backup">❌</td>
+  <td title="Resource: svc-backup">Most recent activity 95 days ago</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: dev.singh">✅</td>
+  <td title="Resource: dev.singh">Most recent activity 30 days ago</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: ben.okafor">✅</td>
+  <td title="Resource: ben.okafor">Most recent activity 3 days ago</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: alice.ng">✅</td>
+  <td title="Resource: alice.ng">Most recent activity 0 days ago</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: chloe.martin">✅</td>
+  <td title="Resource: chloe.martin">Most recent activity 1 days ago</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: emma.wright">✅</td>
+  <td title="Resource: emma.wright">Most recent activity 3 days ago</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: isla.brown">✅</td>
+  <td title="Resource: isla.brown">Most recent activity 60 days ago</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: grace.li">✅</td>
+  <td title="Resource: grace.li">Most recent activity 1 days ago</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kate.nguyen">✅</td>
+  <td title="Resource: kate.nguyen">Most recent activity 2 days ago</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: svc-reporting">✅</td>
+  <td title="Resource: svc-reporting">Most recent activity 0 days ago</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: harry.taylor">✅</td>
+  <td title="Resource: harry.taylor">Most recent activity 10 days ago</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>global</code>
+    
+  </td>
+</tr>
+
+    
+  </tbody>
+</table>
+
+  
+  
+</section>
+
+  
+  
+<section class="control">
+  <h3>KF-03 Restores tested within the last 90 days (servers and databases)</h3>
+
+  
+  <p><em>Koala Freight internal policy control (synthetic).</em></p>
+  
+
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th>OK</th>
+      <th>Skip</th>
+      <th>Info</th>
+      <th>Alarm</th>
+      <th>Error</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="summary-total-ok highlight">4</td>
+      <td class="summary-total-skip">0</td>
+      <td class="summary-total-info">0</td>
+      <td class="summary-total-alarm highlight">4</td>
+      <td class="summary-total-error">0</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+  
+  
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Reason</th>
+      <th>Dimensions</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+<tr>
+  <td class="align-center" title="Resource: KF-SRV-13">❌</td>
+  <td title="Resource: KF-SRV-13">Restore last tested 120 days ago</td>
+  <td>
+    
+    <code>server</code>
+    
+    <code>on-prem</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: KF-SRV-14">❌</td>
+  <td title="Resource: KF-SRV-14">Restore last tested 300 days ago</td>
+  <td>
+    
+    <code>server</code>
+    
+    <code>on-prem</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: reporting-replica">❌</td>
+  <td title="Resource: reporting-replica">Retention 35 days; restore last tested 150 days ago</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: customer-portal-db">❌</td>
+  <td title="Resource: customer-portal-db">Retention 0 days; restore last tested 60 days ago</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: KF-SRV-15">✅</td>
+  <td title="Resource: KF-SRV-15">Restore last tested 10 days ago</td>
+  <td>
+    
+    <code>server</code>
+    
+    <code>on-prem</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: KF-SRV-12">✅</td>
+  <td title="Resource: KF-SRV-12">Restore last tested 45 days ago</td>
+  <td>
+    
+    <code>server</code>
+    
+    <code>on-prem</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: freight-core-db">✅</td>
+  <td title="Resource: freight-core-db">Retention 35 days; restore last tested 60 days ago</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: dev-sandbox-db">✅</td>
+  <td title="Resource: dev-sandbox-db">Retention 35 days; restore last tested 20 days ago</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+  </tbody>
+</table>
+
+  
+  
+</section>
+
+  
+  
+<section class="control">
+  <h3>KF-04 S3 buckets have default encryption and versioning</h3>
+
+  
+  <p><em>Koala Freight internal policy control (synthetic).</em></p>
+  
+
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th>OK</th>
+      <th>Skip</th>
+      <th>Info</th>
+      <th>Alarm</th>
+      <th>Error</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="summary-total-ok highlight">4</td>
+      <td class="summary-total-skip">0</td>
+      <td class="summary-total-info">0</td>
+      <td class="summary-total-alarm highlight">4</td>
+      <td class="summary-total-error">0</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+  
+  
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Reason</th>
+      <th>Dimensions</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-finance-exports">❌</td>
+  <td title="Resource: koala-finance-exports">encryption=true, versioning=false</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-tmp-uploads">❌</td>
+  <td title="Resource: koala-tmp-uploads">encryption=true, versioning=false</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-data-lake-raw">❌</td>
+  <td title="Resource: koala-data-lake-raw">encryption=true, versioning=false</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-cloudtrail-logs">❌</td>
+  <td title="Resource: koala-cloudtrail-logs">encryption=true, versioning=false</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-backups-prod">✅</td>
+  <td title="Resource: koala-backups-prod">encryption=true, versioning=true</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-website-static">✅</td>
+  <td title="Resource: koala-website-static">encryption=true, versioning=true</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-customer-portal-assets">✅</td>
+  <td title="Resource: koala-customer-portal-assets">encryption=true, versioning=true</td>
+  <td>
+    
+    <code>222222222222</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: koala-freight-manifests">✅</td>
+  <td title="Resource: koala-freight-manifests">encryption=true, versioning=true</td>
+  <td>
+    
+    <code>111111111111</code>
+    
+    <code>ap-southeast-2</code>
+    
+  </td>
+</tr>
+
+    
+  </tbody>
+</table>
+
+  
+  
+</section>
+
+  
+  
+<section class="control">
+  <h3>KF-AZ-01 Azure storage: secure transfer required and no anonymous blob access</h3>
+
+  
+  <p><em>Koala Freight internal policy control (synthetic).</em></p>
+  
+
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th>OK</th>
+      <th>Skip</th>
+      <th>Info</th>
+      <th>Alarm</th>
+      <th>Error</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="summary-total-ok highlight">2</td>
+      <td class="summary-total-skip">0</td>
+      <td class="summary-total-info">0</td>
+      <td class="summary-total-alarm highlight">2</td>
+      <td class="summary-total-error">0</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+  
+  
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Reason</th>
+      <th>Dimensions</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kfdevscratch">❌</td>
+  <td title="Resource: kfdevscratch">https_only=false, public_blob_access=false</td>
+  <td>
+    
+    <code>sub-koala-dev</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kfpublicsite">❌</td>
+  <td title="Resource: kfpublicsite">https_only=true, public_blob_access=true</td>
+  <td>
+    
+    <code>sub-koala-corp</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kfarchive">✅</td>
+  <td title="Resource: kfarchive">https_only=true, public_blob_access=false</td>
+  <td>
+    
+    <code>sub-koala-dev</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kfcorpdocs">✅</td>
+  <td title="Resource: kfcorpdocs">https_only=true, public_blob_access=false</td>
+  <td>
+    
+    <code>sub-koala-corp</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+  </tbody>
+</table>
+
+  
+  
+</section>
+
+  
+  
+<section class="control">
+  <h3>KF-AZ-02 Azure NSGs: no inbound 22/3389 from the internet</h3>
+
+  
+  <p><em>Koala Freight internal policy control (synthetic).</em></p>
+  
+
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th>OK</th>
+      <th>Skip</th>
+      <th>Info</th>
+      <th>Alarm</th>
+      <th>Error</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="summary-total-ok highlight">2</td>
+      <td class="summary-total-skip">0</td>
+      <td class="summary-total-info">0</td>
+      <td class="summary-total-alarm highlight">2</td>
+      <td class="summary-total-error">0</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+  
+  
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Reason</th>
+      <th>Dimensions</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+<tr>
+  <td class="align-center" title="Resource: nsg-dev/allow-ssh">❌</td>
+  <td title="Resource: nsg-dev/allow-ssh">Allow 0.0.0.0/0 to port 22</td>
+  <td>
+    
+    <code>sub-koala-corp</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: nsg-jump/allow-rdp">❌</td>
+  <td title="Resource: nsg-jump/allow-rdp">Allow Internet to port 3389</td>
+  <td>
+    
+    <code>sub-koala-dev</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: nsg-app/allow-ssh-vpn">✅</td>
+  <td title="Resource: nsg-app/allow-ssh-vpn">Allow 10.20.0.0/16 to port 22</td>
+  <td>
+    
+    <code>sub-koala-dev</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: nsg-web/allow-https">✅</td>
+  <td title="Resource: nsg-web/allow-https">Allow * to port 443</td>
+  <td>
+    
+    <code>sub-koala-corp</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+  </tbody>
+</table>
+
+  
+  
+</section>
+
+  
+  
+<section class="control">
+  <h3>KF-AZ-03 Azure Key Vaults: soft delete and purge protection on</h3>
+
+  
+  <p><em>Koala Freight internal policy control (synthetic).</em></p>
+  
+
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th>OK</th>
+      <th>Skip</th>
+      <th>Info</th>
+      <th>Alarm</th>
+      <th>Error</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="summary-total-ok highlight">1</td>
+      <td class="summary-total-skip">0</td>
+      <td class="summary-total-info">0</td>
+      <td class="summary-total-alarm highlight">2</td>
+      <td class="summary-total-error">0</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+  
+  
+  
+<table role="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Reason</th>
+      <th>Dimensions</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kv-koala-ci">❌</td>
+  <td title="Resource: kv-koala-ci">soft_delete=true, purge_protection=false</td>
+  <td>
+    
+    <code>sub-koala-corp</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kv-koala-dev">❌</td>
+  <td title="Resource: kv-koala-dev">soft_delete=false, purge_protection=false</td>
+  <td>
+    
+    <code>sub-koala-dev</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+    
+<tr>
+  <td class="align-center" title="Resource: kv-koala-prod">✅</td>
+  <td title="Resource: kv-koala-prod">soft_delete=true, purge_protection=true</td>
+  <td>
+    
+    <code>sub-koala-corp</code>
+    
+    <code>australiaeast</code>
+    
+  </td>
+</tr>
+
+    
+  </tbody>
+</table>
+
+  
+  
+</section>
+
+  
+  
+
+  
+</section>
+
+    <footer><em>Report run at <code>2026-11-02 08:18:00</code> using <a href="https://powerpipe.io"
+          rel="nofollow"><code>Steampipe 1.5.6</code></a> in dir
+        <code>koala-compliance-demo/mod</code>.</em></footer>
+  </div>
+</body>
+
+</html>

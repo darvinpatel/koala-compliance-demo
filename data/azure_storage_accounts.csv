@@ -1,0 +1,5 @@
+subscription_id,resource_group,name,location,allow_blob_public_access,https_only,minimum_tls_version,tag_owner,tag_data_classification
+sub-koala-corp,rg-koala,kfcorpdocs,australiaeast,false,true,TLS1_2,ops,official-sensitive
+sub-koala-dev,rg-koala,kfdevscratch,australiaeast,false,false,TLS1_2,ops,
+sub-koala-corp,rg-koala,kfpublicsite,australiaeast,true,true,TLS1_2,,official-sensitive
+sub-koala-dev,rg-koala,kfarchive,australiaeast,false,true,TLS1_2,data,

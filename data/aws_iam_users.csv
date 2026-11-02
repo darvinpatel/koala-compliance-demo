@@ -1,0 +1,15 @@
+account_id,user_name,console_access,mfa_enabled,active_access_keys,oldest_access_key_age_days,password_last_used_days,access_key_last_used_days,is_admin
+111111111111,alice.ng,true,true,1,130,1,0,true
+222222222222,ben.okafor,true,true,0,,3,,true
+111111111111,chloe.martin,true,false,1,130,1,2,false
+222222222222,dev.singh,true,true,0,,30,,false
+111111111111,emma.wright,true,true,0,,3,,false
+222222222222,finn.oconnor,true,true,0,,200,,true
+111111111111,grace.li,true,true,0,,1,,true
+222222222222,harry.taylor,true,true,0,,10,,true
+111111111111,isla.brown,true,true,0,,60,,true
+222222222222,jack.wilson,true,true,0,,120,,false
+111111111111,svc-backup,false,false,1,130,,95,true
+222222222222,svc-ci-deploy,false,false,1,400,,95,false
+111111111111,svc-reporting,false,false,2,12,,0,false
+222222222222,kate.nguyen,true,true,1,400,30,2,false

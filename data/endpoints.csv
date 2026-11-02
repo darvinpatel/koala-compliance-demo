@@ -1,0 +1,17 @@
+hostname,device_type,internet_facing,os,os_vendor_supported,os_patch_age_days,app_patch_age_days,application_control_enabled,macros_blocked_from_internet,browser_java_blocked,browser_ads_blocked,privileged_accounts_internet_blocked,local_admin_users,backup_enabled,backup_last_tested_days
+KF-LT-000,workstation,false,Windows 11 23H2,true,35,12,true,false,true,true,true,0,false,120
+KF-LT-001,workstation,false,Windows 11 23H2,true,35,2,false,true,true,false,true,2,true,120
+KF-LT-002,workstation,false,macOS 14,true,60,45,true,true,false,false,true,2,true,300
+KF-LT-003,workstation,false,macOS 14,true,9,2,true,false,true,true,true,1,true,45
+KF-LT-004,workstation,false,Windows 11 23H2,true,35,45,false,false,true,true,true,1,false,80
+KF-LT-005,workstation,false,Windows 10 22H2,true,3,45,true,true,true,true,true,1,true,10
+KF-LT-006,workstation,false,Windows 10 22H2,true,9,12,true,false,true,true,false,1,true,10
+KF-LT-007,workstation,false,Windows 11 23H2,true,20,6,true,true,true,true,true,0,true,80
+KF-LT-008,workstation,false,Windows 10 22H2,true,9,2,true,true,true,true,false,0,true,120
+KF-LT-009,workstation,false,macOS 14,true,9,12,true,false,true,true,false,0,true,300
+KF-LT-010,workstation,false,macOS 14,true,3,18,true,true,true,true,true,1,true,45
+KF-LT-011,workstation,false,Windows 11 23H2,true,60,2,false,false,true,true,true,2,true,120
+KF-SRV-12,server,true,Windows Server 2012 R2,false,20,18,true,true,true,true,true,2,true,45
+KF-SRV-13,server,false,Windows Server 2022,true,13,12,true,true,true,true,true,2,true,120
+KF-SRV-14,server,true,Windows Server 2012 R2,false,35,6,true,true,true,true,false,0,true,300
+KF-SRV-15,server,false,Windows Server 2022,true,35,2,false,true,true,true,true,0,true,10

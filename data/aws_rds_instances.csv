@@ -1,0 +1,5 @@
+account_id,region,db_instance_id,engine,storage_encrypted,publicly_accessible,backup_retention_days,last_restore_test_days,tag_owner,tag_data_classification
+111111111111,ap-southeast-2,freight-core-db,mysql,true,true,35,60,ops,official-sensitive
+222222222222,ap-southeast-2,customer-portal-db,mysql,false,false,0,60,data,official
+111111111111,ap-southeast-2,reporting-replica,postgres,false,false,35,150,data,official
+222222222222,ap-southeast-2,dev-sandbox-db,mysql,true,false,35,20,platform,official-sensitive

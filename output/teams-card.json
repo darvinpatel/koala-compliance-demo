@@ -1,0 +1,127 @@
+{
+  "type": "message",
+  "attachments": [
+    {
+      "contentType": "application/vnd.microsoft.card.adaptive",
+      "contentUrl": null,
+      "content": {
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "version": "1.4",
+        "body": [
+          {
+            "type": "TextBlock",
+            "size": "Large",
+            "weight": "Bolder",
+            "text": "Weekly compliance summary"
+          },
+          {
+            "type": "TextBlock",
+            "isSubtle": true,
+            "wrap": true,
+            "text": "Koala Freight (synthetic demo data). Status counts are per resource checked."
+          },
+          {
+            "type": "TextBlock",
+            "weight": "Bolder",
+            "spacing": "Medium",
+            "text": "CIS AWS Foundations Benchmark v3.0.0 (subset)"
+          },
+          {
+            "type": "FactSet",
+            "facts": [
+              {
+                "title": "Controls",
+                "value": "15"
+              },
+              {
+                "title": "OK / Alarm",
+                "value": "53 / 24"
+              },
+              {
+                "title": "Skip / Info / Error",
+                "value": "11 / 0 / 0"
+              },
+              {
+                "title": "Pass %",
+                "value": "68.8%"
+              }
+            ]
+          },
+          {
+            "type": "TextBlock",
+            "wrap": true,
+            "size": "Small",
+            "text": "Top alarms: 1.14 Ensure access keys are rotated every 90 days or less (5); 1.12 Ensure credentials unused for 45 days or greater are disabled (5); 5.2 Ensure no security groups allow ingress from 0.0.0.0/0 to remote server administration ports (2)"
+          },
+          {
+            "type": "TextBlock",
+            "weight": "Bolder",
+            "spacing": "Medium",
+            "text": "ACSC Essential Eight - Maturity Level One"
+          },
+          {
+            "type": "FactSet",
+            "facts": [
+              {
+                "title": "Controls",
+                "value": "9"
+              },
+              {
+                "title": "OK / Alarm",
+                "value": "100 / 33"
+              },
+              {
+                "title": "Skip / Info / Error",
+                "value": "12 / 0 / 0"
+              },
+              {
+                "title": "Pass %",
+                "value": "75.2%"
+              }
+            ]
+          },
+          {
+            "type": "TextBlock",
+            "wrap": true,
+            "size": "Small",
+            "text": "Top alarms: Patch operating systems: OS patched within two weeks (internet-facing) or one month (workstations, other servers) (8); Restrict Microsoft Office macros: Microsoft Office macros in files originating from the internet are blocked (6); Patch applications: Office suites, browsers, email clients, PDF software and security products patched within two weeks (5)"
+          },
+          {
+            "type": "TextBlock",
+            "weight": "Bolder",
+            "spacing": "Medium",
+            "text": "Koala Freight custom controls"
+          },
+          {
+            "type": "FactSet",
+            "facts": [
+              {
+                "title": "Controls",
+                "value": "7"
+              },
+              {
+                "title": "OK / Alarm",
+                "value": "41 / 26"
+              },
+              {
+                "title": "Skip / Info / Error",
+                "value": "0 / 0 / 0"
+              },
+              {
+                "title": "Pass %",
+                "value": "61.2%"
+              }
+            ]
+          },
+          {
+            "type": "TextBlock",
+            "wrap": true,
+            "size": "Small",
+            "text": "Top alarms: KF-01 Data stores carry owner and data-classification tags (8); KF-04 S3 buckets have default encryption and versioning (4); KF-03 Restores tested within the last 90 days (servers and databases) (4)"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1671 @@
+{
+  "group_id": "root_result_group",
+  "title": "CIS AWS Foundations Benchmark v3.0.0 (subset)",
+  "description": "",
+  "tags": {},
+  "summary": {
+    "status": {
+      "alarm": 24,
+      "ok": 53,
+      "info": 0,
+      "skip": 11,
+      "error": 0
+    }
+  },
+  "groups": [
+    {
+      "group_id": "koala_compliance.benchmark.cis_aws_v300_subset",
+      "title": "CIS AWS Foundations Benchmark v3.0.0 (subset)",
+      "description": "Selected CIS v3.0.0 recommendations run against the synthetic Koala Freight estate.",
+      "tags": {},
+      "summary": {
+        "status": {
+          "alarm": 24,
+          "ok": 53,
+          "info": 0,
+          "skip": 11,
+          "error": 0
+        }
+      },
+      "groups": [],
+      "controls": [
+        {
+          "summary": {
+            "alarm": 1,
+            "ok": 1,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Root user has active access keys",
+              "resource": "koala-nonprod",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No root access keys",
+              "resource": "koala-prod",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_1_4",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 1.4.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "1.4",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "1.4 Ensure no 'root' user account access key exists",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 1,
+            "ok": 1,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Root MFA not enabled",
+              "resource": "koala-nonprod",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Root MFA enabled",
+              "resource": "koala-prod",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_1_5",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 1.5.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "1.5",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "1.5 Ensure MFA is enabled for the 'root' user account",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 1,
+            "ok": 1,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Minimum password length is 8",
+              "resource": "koala-nonprod",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Minimum password length is 14",
+              "resource": "koala-prod",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_1_8",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 1.8.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "1.8",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "1.8 Ensure IAM password policy requires minimum length of 14 or greater",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 1,
+            "ok": 10,
+            "info": 0,
+            "skip": 3,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Console user without MFA",
+              "resource": "chloe.martin",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Console user has MFA",
+              "resource": "kate.nguyen",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Console user has MFA",
+              "resource": "ben.okafor",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Console user has MFA",
+              "resource": "dev.singh",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Console user has MFA",
+              "resource": "emma.wright",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Console user has MFA",
+              "resource": "finn.oconnor",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Console user has MFA",
+              "resource": "grace.li",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Console user has MFA",
+              "resource": "harry.taylor",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Console user has MFA",
+              "resource": "isla.brown",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Console user has MFA",
+              "resource": "alice.ng",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Console user has MFA",
+              "resource": "jack.wilson",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No console password",
+              "resource": "svc-reporting",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No console password",
+              "resource": "svc-ci-deploy",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No console password",
+              "resource": "svc-backup",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_1_10",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 1.10.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "1.10",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "1.10 Ensure MFA is enabled for all IAM users that have a console password",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 5,
+            "ok": 9,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Password last used: 200 days ago; access key last used: no key",
+              "resource": "finn.oconnor",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: 60 days ago; access key last used: no key",
+              "resource": "isla.brown",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: no password; access key last used: 95 days ago",
+              "resource": "svc-ci-deploy",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: 120 days ago; access key last used: no key",
+              "resource": "jack.wilson",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: no password; access key last used: 95 days ago",
+              "resource": "svc-backup",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: 30 days ago; access key last used: 2 days ago",
+              "resource": "kate.nguyen",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: 3 days ago; access key last used: no key",
+              "resource": "ben.okafor",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: 1 days ago; access key last used: 2 days ago",
+              "resource": "chloe.martin",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: 30 days ago; access key last used: no key",
+              "resource": "dev.singh",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: 3 days ago; access key last used: no key",
+              "resource": "emma.wright",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: 1 days ago; access key last used: no key",
+              "resource": "grace.li",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: 10 days ago; access key last used: no key",
+              "resource": "harry.taylor",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: no password; access key last used: 0 days ago",
+              "resource": "svc-reporting",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Password last used: 1 days ago; access key last used: 0 days ago",
+              "resource": "alice.ng",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_1_12",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 1.12.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "1.12",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "1.12 Ensure credentials unused for 45 days or greater are disabled",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 5,
+            "ok": 1,
+            "info": 0,
+            "skip": 8,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Oldest active key is 400 days old",
+              "resource": "kate.nguyen",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest active key is 130 days old",
+              "resource": "chloe.martin",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest active key is 400 days old",
+              "resource": "svc-ci-deploy",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest active key is 130 days old",
+              "resource": "alice.ng",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest active key is 130 days old",
+              "resource": "svc-backup",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest active key is 12 days old",
+              "resource": "svc-reporting",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No active access keys",
+              "resource": "ben.okafor",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No active access keys",
+              "resource": "dev.singh",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No active access keys",
+              "resource": "emma.wright",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No active access keys",
+              "resource": "finn.oconnor",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No active access keys",
+              "resource": "grace.li",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No active access keys",
+              "resource": "harry.taylor",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No active access keys",
+              "resource": "isla.brown",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "No active access keys",
+              "resource": "jack.wilson",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_1_14",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 1.14.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "1.14",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "1.14 Ensure access keys are rotated every 90 days or less",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 1,
+            "ok": 7,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Block public access off",
+              "resource": "koala-backups-prod",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Block public access on",
+              "resource": "koala-data-lake-raw",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Block public access on",
+              "resource": "koala-freight-manifests",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Block public access on",
+              "resource": "koala-finance-exports",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Block public access on",
+              "resource": "koala-customer-portal-assets",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Block public access on",
+              "resource": "koala-website-static",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Block public access on",
+              "resource": "koala-cloudtrail-logs",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Block public access on",
+              "resource": "koala-tmp-uploads",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_2_1_4",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 2.1.4.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "2.1.4",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "2.1.4 Ensure that S3 Buckets are configured with 'Block public access (bucket settings)'",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 2,
+            "ok": 8,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Volume not encrypted",
+              "resource": "vol-0004k",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Volume not encrypted",
+              "resource": "vol-0006k",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Volume encrypted",
+              "resource": "vol-0009k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Volume encrypted",
+              "resource": "vol-0008k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Volume encrypted",
+              "resource": "vol-0005k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Volume encrypted",
+              "resource": "vol-0000k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Volume encrypted",
+              "resource": "vol-0003k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Volume encrypted",
+              "resource": "vol-0001k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Volume encrypted",
+              "resource": "vol-0002k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Volume encrypted",
+              "resource": "vol-0007k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_2_2_1",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 2.2.1.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "2.2.1",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "2.2.1 Ensure EBS Volume Encryption is Enabled in all Regions (per-volume proxy)",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 2,
+            "ok": 2,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Storage not encrypted",
+              "resource": "customer-portal-db",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Storage not encrypted",
+              "resource": "reporting-replica",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Storage encrypted",
+              "resource": "dev-sandbox-db",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Storage encrypted",
+              "resource": "freight-core-db",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_2_3_1",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 2.3.1.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "2.3.1",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "2.3.1 Ensure that encryption-at-rest is enabled for RDS Instances",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 1,
+            "ok": 3,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Instance is publicly accessible",
+              "resource": "freight-core-db",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Not publicly accessible",
+              "resource": "dev-sandbox-db",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Not publicly accessible",
+              "resource": "customer-portal-db",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Not publicly accessible",
+              "resource": "reporting-replica",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_2_3_3",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 2.3.3.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "2.3.3",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "2.3.3 Ensure that public access is not given to RDS Instance",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 0,
+            "ok": 2,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Multi-region trail logging",
+              "resource": "nonprod-trail",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Multi-region trail logging",
+              "resource": "org-trail",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_3_1",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 3.1.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "3.1",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "3.1 Ensure CloudTrail is enabled in all regions",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 0,
+            "ok": 2,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Log file validation on",
+              "resource": "nonprod-trail",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Log file validation on",
+              "resource": "org-trail",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_3_2",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 3.2.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "3.2",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "3.2 Ensure CloudTrail log file validation is enabled",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 1,
+            "ok": 1,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Not encrypted with KMS key",
+              "resource": "nonprod-trail",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Encrypted with KMS key",
+              "resource": "org-trail",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_3_5",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 3.5.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "3.5",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "3.5 Ensure CloudTrail logs are encrypted at rest using KMS CMKs",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 2,
+            "ok": 5,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Ingress 0.0.0.0/0 to port 3389",
+              "resource": "sg-0d04 (win-jump:3389)",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Ingress 0.0.0.0/0 to port 22",
+              "resource": "sg-0b02 (bastion:22)",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Ingress 0.0.0.0/0 to port 80",
+              "resource": "sg-0a01 (web-alb:80)",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Ingress 0.0.0.0/0 to port 443",
+              "resource": "sg-0a01 (web-alb:443)",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Ingress 203.0.113.10/32 to port 22",
+              "resource": "sg-0g07 (ops-vpn:22)",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Ingress 10.0.0.0/16 to port 5432",
+              "resource": "sg-0e05 (db-tier:5432)",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Ingress 10.0.0.0/16 to port 8080",
+              "resource": "sg-0c03 (app-tier:8080)",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_5_2",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 5.2.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "5.2",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "5.2 Ensure no security groups allow ingress from 0.0.0.0/0 to remote server administration ports",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 1,
+            "ok": 0,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Ingress ::/0 to port 22",
+              "resource": "sg-0f06 (legacy-ftp:22)",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.cis_v300_5_3",
+          "description": "CIS AWS Foundations Benchmark v3.0.0 recommendation 5.3.",
+          "severity": "",
+          "tags": {
+            "cis_item_id": "5.3",
+            "framework": "cis_aws_v3.0.0"
+          },
+          "title": "5.3 Ensure no security groups allow ingress from ::/0 to remote server administration ports",
+          "run_status": 4,
+          "run_error": ""
+        }
+      ]
+    }
+  ],
+  "controls": null
+} 

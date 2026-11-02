@@ -1,0 +1,2409 @@
+{
+  "group_id": "root_result_group",
+  "title": "ACSC Essential Eight - Maturity Level One",
+  "description": "",
+  "tags": {},
+  "summary": {
+    "status": {
+      "alarm": 33,
+      "ok": 100,
+      "info": 0,
+      "skip": 12,
+      "error": 0
+    }
+  },
+  "groups": [
+    {
+      "group_id": "koala_compliance.benchmark.essential_eight_ml1",
+      "title": "ACSC Essential Eight - Maturity Level One",
+      "description": "One or more checks for each of the eight mitigation strategies at Maturity Level One.",
+      "tags": {},
+      "summary": {
+        "status": {
+          "alarm": 33,
+          "ok": 100,
+          "info": 0,
+          "skip": 12,
+          "error": 0
+        }
+      },
+      "groups": [],
+      "controls": [
+        {
+          "summary": {
+            "alarm": 5,
+            "ok": 11,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Oldest missing application patch released 45 days ago (limit 14)",
+              "resource": "KF-LT-002",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 18 days ago (limit 14)",
+              "resource": "KF-SRV-12",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 45 days ago (limit 14)",
+              "resource": "KF-LT-005",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 18 days ago (limit 14)",
+              "resource": "KF-LT-010",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 45 days ago (limit 14)",
+              "resource": "KF-LT-004",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 2 days ago (limit 14)",
+              "resource": "KF-SRV-15",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 2 days ago (limit 14)",
+              "resource": "KF-LT-008",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 6 days ago (limit 14)",
+              "resource": "KF-LT-007",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 12 days ago (limit 14)",
+              "resource": "KF-LT-000",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 2 days ago (limit 14)",
+              "resource": "KF-LT-001",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 2 days ago (limit 14)",
+              "resource": "KF-LT-003",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 12 days ago (limit 14)",
+              "resource": "KF-SRV-13",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 12 days ago (limit 14)",
+              "resource": "KF-LT-009",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 6 days ago (limit 14)",
+              "resource": "KF-SRV-14",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 12 days ago (limit 14)",
+              "resource": "KF-LT-006",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Oldest missing application patch released 2 days ago (limit 14)",
+              "resource": "KF-LT-011",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.e8_ml1_patch_applications",
+          "description": "ACSC Essential Eight Maturity Model (Nov 2023), Maturity Level One, mitigation strategy 'Patch applications'.",
+          "severity": "",
+          "tags": {
+            "e8_maturity_level": "ML1",
+            "e8_strategy": "Patch applications",
+            "framework": "acsc_essential_eight"
+          },
+          "title": "Patch applications: Office suites, browsers, email clients, PDF software and security products patched within two weeks",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 8,
+            "ok": 8,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "OS patch age 35 days (limit 31)",
+              "resource": "KF-SRV-15",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 60 days (limit 31)",
+              "resource": "KF-LT-002",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 35 days (limit 31)",
+              "resource": "KF-LT-000",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 35 days (limit 31)",
+              "resource": "KF-LT-001",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 20 days (limit 14)",
+              "resource": "KF-SRV-12",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 35 days (limit 14)",
+              "resource": "KF-SRV-14",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 60 days (limit 31)",
+              "resource": "KF-LT-011",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 35 days (limit 31)",
+              "resource": "KF-LT-004",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 9 days (limit 31)",
+              "resource": "KF-LT-008",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 20 days (limit 31)",
+              "resource": "KF-LT-007",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 9 days (limit 31)",
+              "resource": "KF-LT-003",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 13 days (limit 31)",
+              "resource": "KF-SRV-13",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 9 days (limit 31)",
+              "resource": "KF-LT-009",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 3 days (limit 31)",
+              "resource": "KF-LT-005",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 9 days (limit 31)",
+              "resource": "KF-LT-006",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "OS patch age 3 days (limit 31)",
+              "resource": "KF-LT-010",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.e8_ml1_patch_operating_systems",
+          "description": "ACSC Essential Eight Maturity Model (Nov 2023), Maturity Level One, mitigation strategy 'Patch operating systems'.",
+          "severity": "",
+          "tags": {
+            "e8_maturity_level": "ML1",
+            "e8_strategy": "Patch operating systems",
+            "framework": "acsc_essential_eight"
+          },
+          "title": "Patch operating systems: OS patched within two weeks (internet-facing) or one month (workstations, other servers)",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 2,
+            "ok": 14,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Windows Server 2012 R2 is no longer vendor supported",
+              "resource": "KF-SRV-12",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Windows Server 2012 R2 is no longer vendor supported",
+              "resource": "KF-SRV-14",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Windows Server 2022 is vendor supported",
+              "resource": "KF-SRV-15",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Windows 10 22H2 is vendor supported",
+              "resource": "KF-LT-008",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Windows 11 23H2 is vendor supported",
+              "resource": "KF-LT-007",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "macOS 14 is vendor supported",
+              "resource": "KF-LT-002",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Windows 11 23H2 is vendor supported",
+              "resource": "KF-LT-000",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Windows 11 23H2 is vendor supported",
+              "resource": "KF-LT-001",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "macOS 14 is vendor supported",
+              "resource": "KF-LT-003",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Windows Server 2022 is vendor supported",
+              "resource": "KF-SRV-13",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "macOS 14 is vendor supported",
+              "resource": "KF-LT-009",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Windows 10 22H2 is vendor supported",
+              "resource": "KF-LT-005",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Windows 10 22H2 is vendor supported",
+              "resource": "KF-LT-006",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "macOS 14 is vendor supported",
+              "resource": "KF-LT-010",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Windows 11 23H2 is vendor supported",
+              "resource": "KF-LT-011",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Windows 11 23H2 is vendor supported",
+              "resource": "KF-LT-004",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.e8_ml1_os_supported",
+          "description": "ACSC Essential Eight Maturity Model (Nov 2023), Maturity Level One, mitigation strategy 'Patch operating systems'.",
+          "severity": "",
+          "tags": {
+            "e8_maturity_level": "ML1",
+            "e8_strategy": "Patch operating systems",
+            "framework": "acsc_essential_eight"
+          },
+          "title": "Patch operating systems: Operating systems that are no longer supported by vendors are replaced",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 1,
+            "ok": 16,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "AWS console user without MFA",
+              "resource": "chloe.martin",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "aws"
+                }
+              ]
+            },
+            {
+              "reason": "AWS console user has MFA",
+              "resource": "kate.nguyen",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "aws"
+                }
+              ]
+            },
+            {
+              "reason": "AWS console user has MFA",
+              "resource": "ben.okafor",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "aws"
+                }
+              ]
+            },
+            {
+              "reason": "AWS console user has MFA",
+              "resource": "dev.singh",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "aws"
+                }
+              ]
+            },
+            {
+              "reason": "AWS console user has MFA",
+              "resource": "emma.wright",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "aws"
+                }
+              ]
+            },
+            {
+              "reason": "AWS console user has MFA",
+              "resource": "finn.oconnor",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "aws"
+                }
+              ]
+            },
+            {
+              "reason": "AWS console user has MFA",
+              "resource": "grace.li",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "aws"
+                }
+              ]
+            },
+            {
+              "reason": "AWS console user has MFA",
+              "resource": "harry.taylor",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "aws"
+                }
+              ]
+            },
+            {
+              "reason": "AWS console user has MFA",
+              "resource": "isla.brown",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "aws"
+                }
+              ]
+            },
+            {
+              "reason": "AWS console user has MFA",
+              "resource": "alice.ng",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "aws"
+                }
+              ]
+            },
+            {
+              "reason": "AWS console user has MFA",
+              "resource": "jack.wilson",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "aws"
+                }
+              ]
+            },
+            {
+              "reason": "Entra ID user has MFA",
+              "resource": "contractor.temp@koalafreight.example",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "koalafreight.onmicrosoft.com"
+                },
+                {
+                  "key": "region",
+                  "value": "azure"
+                }
+              ]
+            },
+            {
+              "reason": "Entra ID user has MFA",
+              "resource": "grace.li@koalafreight.example",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "koalafreight.onmicrosoft.com"
+                },
+                {
+                  "key": "region",
+                  "value": "azure"
+                }
+              ]
+            },
+            {
+              "reason": "Entra ID user has MFA",
+              "resource": "kate.nguyen@koalafreight.example",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "koalafreight.onmicrosoft.com"
+                },
+                {
+                  "key": "region",
+                  "value": "azure"
+                }
+              ]
+            },
+            {
+              "reason": "Entra ID user has MFA",
+              "resource": "ben.okafor@koalafreight.example",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "koalafreight.onmicrosoft.com"
+                },
+                {
+                  "key": "region",
+                  "value": "azure"
+                }
+              ]
+            },
+            {
+              "reason": "Entra ID user has MFA",
+              "resource": "admin.breakglass@koalafreight.example",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "koalafreight.onmicrosoft.com"
+                },
+                {
+                  "key": "region",
+                  "value": "azure"
+                }
+              ]
+            },
+            {
+              "reason": "Entra ID user has MFA",
+              "resource": "alice.ng@koalafreight.example",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "koalafreight.onmicrosoft.com"
+                },
+                {
+                  "key": "region",
+                  "value": "azure"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.e8_ml1_multi_factor_authentication",
+          "description": "ACSC Essential Eight Maturity Model (Nov 2023), Maturity Level One, mitigation strategy 'Multi-factor authentication'.",
+          "severity": "",
+          "tags": {
+            "e8_maturity_level": "ML1",
+            "e8_strategy": "Multi-factor authentication",
+            "framework": "acsc_essential_eight"
+          },
+          "title": "Multi-factor authentication: MFA used to authenticate users to the organisation's online services (AWS console, Entra ID)",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 4,
+            "ok": 12,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Privileged accounts can reach internet/email",
+              "resource": "KF-LT-008",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts can reach internet/email",
+              "resource": "KF-LT-009",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts can reach internet/email",
+              "resource": "KF-SRV-14",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts can reach internet/email",
+              "resource": "KF-LT-006",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-SRV-15",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-LT-007",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-LT-002",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-LT-000",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-LT-001",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-SRV-12",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-LT-003",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-SRV-13",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-LT-005",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-LT-010",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-LT-011",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Privileged accounts blocked from internet/email",
+              "resource": "KF-LT-004",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.e8_ml1_restrict_administrative_privileges",
+          "description": "ACSC Essential Eight Maturity Model (Nov 2023), Maturity Level One, mitigation strategy 'Restrict administrative privileges'.",
+          "severity": "",
+          "tags": {
+            "e8_maturity_level": "ML1",
+            "e8_strategy": "Restrict administrative privileges",
+            "framework": "acsc_essential_eight"
+          },
+          "title": "Restrict administrative privileges: Privileged user accounts are prevented from accessing the internet, email and web services",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 3,
+            "ok": 9,
+            "info": 0,
+            "skip": 4,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "No application control",
+              "resource": "KF-LT-001",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "No application control",
+              "resource": "KF-LT-011",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "No application control",
+              "resource": "KF-LT-004",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Application control enforced",
+              "resource": "KF-LT-008",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Application control enforced",
+              "resource": "KF-LT-007",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Application control enforced",
+              "resource": "KF-LT-002",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Application control enforced",
+              "resource": "KF-LT-000",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Application control enforced",
+              "resource": "KF-LT-003",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Application control enforced",
+              "resource": "KF-LT-009",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Application control enforced",
+              "resource": "KF-LT-005",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Application control enforced",
+              "resource": "KF-LT-006",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Application control enforced",
+              "resource": "KF-LT-010",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "ML1 scope is workstations only",
+              "resource": "KF-SRV-15",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "ML1 scope is workstations only",
+              "resource": "KF-SRV-12",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "ML1 scope is workstations only",
+              "resource": "KF-SRV-13",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "ML1 scope is workstations only",
+              "resource": "KF-SRV-14",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.e8_ml1_application_control",
+          "description": "ACSC Essential Eight Maturity Model (Nov 2023), Maturity Level One, mitigation strategy 'Application control'.",
+          "severity": "",
+          "tags": {
+            "e8_maturity_level": "ML1",
+            "e8_strategy": "Application control",
+            "framework": "acsc_essential_eight"
+          },
+          "title": "Application control: Application control is implemented on workstations",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 6,
+            "ok": 6,
+            "info": 0,
+            "skip": 4,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Internet macros not blocked",
+              "resource": "KF-LT-000",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Internet macros not blocked",
+              "resource": "KF-LT-003",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Internet macros not blocked",
+              "resource": "KF-LT-009",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Internet macros not blocked",
+              "resource": "KF-LT-006",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Internet macros not blocked",
+              "resource": "KF-LT-011",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Internet macros not blocked",
+              "resource": "KF-LT-004",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Internet macros blocked",
+              "resource": "KF-LT-008",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Internet macros blocked",
+              "resource": "KF-LT-007",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Internet macros blocked",
+              "resource": "KF-LT-002",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Internet macros blocked",
+              "resource": "KF-LT-001",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Internet macros blocked",
+              "resource": "KF-LT-005",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Internet macros blocked",
+              "resource": "KF-LT-010",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Server, no Office install",
+              "resource": "KF-SRV-15",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Server, no Office install",
+              "resource": "KF-SRV-12",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Server, no Office install",
+              "resource": "KF-SRV-13",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Server, no Office install",
+              "resource": "KF-SRV-14",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.e8_ml1_restrict_microsoft_office_macros",
+          "description": "ACSC Essential Eight Maturity Model (Nov 2023), Maturity Level One, mitigation strategy 'Restrict Microsoft Office macros'.",
+          "severity": "",
+          "tags": {
+            "e8_maturity_level": "ML1",
+            "e8_strategy": "Restrict Microsoft Office macros",
+            "framework": "acsc_essential_eight"
+          },
+          "title": "Restrict Microsoft Office macros: Microsoft Office macros in files originating from the internet are blocked",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 2,
+            "ok": 10,
+            "info": 0,
+            "skip": 4,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Java blocked: false, ads blocked: false",
+              "resource": "KF-LT-002",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Java blocked: true, ads blocked: false",
+              "resource": "KF-LT-001",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Java blocked: true, ads blocked: true",
+              "resource": "KF-LT-008",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Java blocked: true, ads blocked: true",
+              "resource": "KF-LT-007",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Java blocked: true, ads blocked: true",
+              "resource": "KF-LT-000",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Java blocked: true, ads blocked: true",
+              "resource": "KF-LT-003",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Java blocked: true, ads blocked: true",
+              "resource": "KF-LT-009",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Java blocked: true, ads blocked: true",
+              "resource": "KF-LT-005",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Java blocked: true, ads blocked: true",
+              "resource": "KF-LT-006",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Java blocked: true, ads blocked: true",
+              "resource": "KF-LT-010",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Java blocked: true, ads blocked: true",
+              "resource": "KF-LT-011",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Java blocked: true, ads blocked: true",
+              "resource": "KF-LT-004",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Server, no user browsing",
+              "resource": "KF-SRV-15",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Server, no user browsing",
+              "resource": "KF-SRV-12",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Server, no user browsing",
+              "resource": "KF-SRV-13",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Server, no user browsing",
+              "resource": "KF-SRV-14",
+              "status": "skip",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.e8_ml1_user_application_hardening",
+          "description": "ACSC Essential Eight Maturity Model (Nov 2023), Maturity Level One, mitigation strategy 'User application hardening'.",
+          "severity": "",
+          "tags": {
+            "e8_maturity_level": "ML1",
+            "e8_strategy": "User application hardening",
+            "framework": "acsc_essential_eight"
+          },
+          "title": "User application hardening: Web browsers do not process Java or web advertisements from the internet",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 2,
+            "ok": 14,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "No backup configured",
+              "resource": "KF-LT-000",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "No backup configured",
+              "resource": "KF-LT-004",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 10 days ago",
+              "resource": "KF-SRV-15",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 120 days ago",
+              "resource": "KF-LT-008",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 80 days ago",
+              "resource": "KF-LT-007",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 300 days ago",
+              "resource": "KF-LT-002",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 120 days ago",
+              "resource": "KF-LT-001",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 45 days ago",
+              "resource": "KF-SRV-12",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 45 days ago",
+              "resource": "KF-LT-003",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 120 days ago",
+              "resource": "KF-SRV-13",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 300 days ago",
+              "resource": "KF-LT-009",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 300 days ago",
+              "resource": "KF-SRV-14",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 10 days ago",
+              "resource": "KF-LT-005",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 10 days ago",
+              "resource": "KF-LT-006",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 45 days ago",
+              "resource": "KF-LT-010",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 120 days ago",
+              "resource": "KF-LT-011",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "workstation"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.e8_ml1_regular_backups",
+          "description": "ACSC Essential Eight Maturity Model (Nov 2023), Maturity Level One, mitigation strategy 'Regular backups'.",
+          "severity": "",
+          "tags": {
+            "e8_maturity_level": "ML1",
+            "e8_strategy": "Regular backups",
+            "framework": "acsc_essential_eight"
+          },
+          "title": "Regular backups: Backups are performed and restoration is tested (org threshold: test recorded in last 12 months)",
+          "run_status": 4,
+          "run_error": ""
+        }
+      ]
+    }
+  ],
+  "controls": null
+} 

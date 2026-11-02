@@ -1,0 +1,9 @@
+account_id,region,group_id,group_name,direction,protocol,from_port,to_port,cidr
+111111111111,ap-southeast-2,sg-0a01,web-alb,ingress,tcp,443,443,0.0.0.0/0
+222222222222,ap-southeast-2,sg-0a01,web-alb,ingress,tcp,80,80,0.0.0.0/0
+111111111111,ap-southeast-2,sg-0b02,bastion,ingress,tcp,22,22,0.0.0.0/0
+222222222222,ap-southeast-2,sg-0c03,app-tier,ingress,tcp,8080,8080,10.0.0.0/16
+111111111111,ap-southeast-2,sg-0d04,win-jump,ingress,tcp,3389,3389,0.0.0.0/0
+222222222222,ap-southeast-2,sg-0e05,db-tier,ingress,tcp,5432,5432,10.0.0.0/16
+111111111111,ap-southeast-2,sg-0f06,legacy-ftp,ingress,tcp,22,22,::/0
+222222222222,ap-southeast-2,sg-0g07,ops-vpn,ingress,tcp,22,22,203.0.113.10/32

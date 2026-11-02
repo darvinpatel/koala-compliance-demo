@@ -1,0 +1,9 @@
+account_id,bucket_name,region,block_public_access,default_encryption,versioning,access_logging,tag_owner,tag_data_classification
+111111111111,koala-freight-manifests,ap-southeast-2,true,true,true,true,,public
+222222222222,koala-customer-portal-assets,ap-southeast-2,true,true,true,false,platform,official
+111111111111,koala-cloudtrail-logs,ap-southeast-2,true,true,false,true,ops,public
+222222222222,koala-data-lake-raw,ap-southeast-2,true,true,false,true,,official
+111111111111,koala-finance-exports,ap-southeast-2,true,true,false,false,finance,official-sensitive
+222222222222,koala-website-static,ap-southeast-2,true,true,true,false,ops,
+111111111111,koala-tmp-uploads,ap-southeast-2,true,true,false,false,data,
+222222222222,koala-backups-prod,ap-southeast-2,false,true,true,true,ops,public

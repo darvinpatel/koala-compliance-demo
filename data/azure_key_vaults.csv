@@ -1,0 +1,4 @@
+subscription_id,location,vault_name,soft_delete_enabled,purge_protection_enabled
+sub-koala-corp,australiaeast,kv-koala-prod,true,true
+sub-koala-dev,australiaeast,kv-koala-dev,false,false
+sub-koala-corp,australiaeast,kv-koala-ci,true,false

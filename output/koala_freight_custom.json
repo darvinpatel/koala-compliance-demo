@@ -1,0 +1,1195 @@
+{
+  "group_id": "root_result_group",
+  "title": "Koala Freight custom controls",
+  "description": "",
+  "tags": {},
+  "summary": {
+    "status": {
+      "alarm": 26,
+      "ok": 41,
+      "info": 0,
+      "skip": 0,
+      "error": 0
+    }
+  },
+  "groups": [
+    {
+      "group_id": "koala_compliance.benchmark.koala_freight_custom",
+      "title": "Koala Freight custom controls",
+      "description": "Org-specific policy checks plus an Azure starter set.",
+      "tags": {},
+      "summary": {
+        "status": {
+          "alarm": 26,
+          "ok": 41,
+          "info": 0,
+          "skip": 0,
+          "error": 0
+        }
+      },
+      "groups": [],
+      "controls": [
+        {
+          "summary": {
+            "alarm": 8,
+            "ok": 18,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "owner=MISSING, data-classification=official",
+              "resource": "koala-data-lake-raw",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=MISSING, data-classification=public",
+              "resource": "koala-freight-manifests",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=ops, data-classification=MISSING",
+              "resource": "koala-website-static",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=data, data-classification=MISSING",
+              "resource": "koala-tmp-uploads",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=ops, data-classification=MISSING",
+              "resource": "vol-0007k",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=data, data-classification=MISSING",
+              "resource": "kfarchive",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-dev"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            },
+            {
+              "reason": "owner=MISSING, data-classification=official-sensitive",
+              "resource": "kfpublicsite",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-corp"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            },
+            {
+              "reason": "owner=ops, data-classification=MISSING",
+              "resource": "kfdevscratch",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-dev"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            },
+            {
+              "reason": "owner=ops, data-classification=public",
+              "resource": "koala-backups-prod",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=finance, data-classification=official-sensitive",
+              "resource": "koala-finance-exports",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=platform, data-classification=official",
+              "resource": "koala-customer-portal-assets",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=ops, data-classification=public",
+              "resource": "koala-cloudtrail-logs",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=data, data-classification=official-sensitive",
+              "resource": "vol-0009k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=data, data-classification=official",
+              "resource": "vol-0008k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=data, data-classification=official",
+              "resource": "vol-0005k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=finance, data-classification=official-sensitive",
+              "resource": "vol-0000k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=data, data-classification=public",
+              "resource": "vol-0003k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=ops, data-classification=official",
+              "resource": "vol-0001k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=finance, data-classification=official",
+              "resource": "vol-0004k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=ops, data-classification=official-sensitive",
+              "resource": "vol-0002k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=data, data-classification=official",
+              "resource": "vol-0006k",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=platform, data-classification=official-sensitive",
+              "resource": "dev-sandbox-db",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=ops, data-classification=official-sensitive",
+              "resource": "freight-core-db",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=data, data-classification=official",
+              "resource": "customer-portal-db",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=data, data-classification=official",
+              "resource": "reporting-replica",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "owner=ops, data-classification=official-sensitive",
+              "resource": "kfcorpdocs",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-corp"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.kf_required_tags",
+          "description": "Koala Freight internal policy control (synthetic).",
+          "severity": "",
+          "tags": {
+            "cloud": "aws",
+            "framework": "koala_freight_custom",
+            "kf_control_id": "KF-01"
+          },
+          "title": "KF-01 Data stores carry owner and data-classification tags",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 4,
+            "ok": 10,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Most recent activity 200 days ago",
+              "resource": "finn.oconnor",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 95 days ago",
+              "resource": "svc-ci-deploy",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 120 days ago",
+              "resource": "jack.wilson",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 95 days ago",
+              "resource": "svc-backup",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 2 days ago",
+              "resource": "kate.nguyen",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 3 days ago",
+              "resource": "ben.okafor",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 1 days ago",
+              "resource": "chloe.martin",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 30 days ago",
+              "resource": "dev.singh",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 3 days ago",
+              "resource": "emma.wright",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 1 days ago",
+              "resource": "grace.li",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 10 days ago",
+              "resource": "harry.taylor",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 60 days ago",
+              "resource": "isla.brown",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 0 days ago",
+              "resource": "svc-reporting",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            },
+            {
+              "reason": "Most recent activity 0 days ago",
+              "resource": "alice.ng",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "global"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.kf_iam_users_unused_90_days",
+          "description": "Koala Freight internal policy control (synthetic).",
+          "severity": "",
+          "tags": {
+            "cloud": "aws",
+            "framework": "koala_freight_custom",
+            "kf_control_id": "KF-02"
+          },
+          "title": "KF-02 No IAM users left unused for more than 90 days",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 4,
+            "ok": 4,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Restore last tested 120 days ago",
+              "resource": "KF-SRV-13",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 300 days ago",
+              "resource": "KF-SRV-14",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Retention 0 days; restore last tested 60 days ago",
+              "resource": "customer-portal-db",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Retention 35 days; restore last tested 150 days ago",
+              "resource": "reporting-replica",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 10 days ago",
+              "resource": "KF-SRV-15",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Restore last tested 45 days ago",
+              "resource": "KF-SRV-12",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "server"
+                },
+                {
+                  "key": "region",
+                  "value": "on-prem"
+                }
+              ]
+            },
+            {
+              "reason": "Retention 35 days; restore last tested 20 days ago",
+              "resource": "dev-sandbox-db",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "Retention 35 days; restore last tested 60 days ago",
+              "resource": "freight-core-db",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.kf_backups_tested_90_days",
+          "description": "Koala Freight internal policy control (synthetic).",
+          "severity": "",
+          "tags": {
+            "cloud": "aws",
+            "framework": "koala_freight_custom",
+            "kf_control_id": "KF-03"
+          },
+          "title": "KF-03 Restores tested within the last 90 days (servers and databases)",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 4,
+            "ok": 4,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "encryption=true, versioning=false",
+              "resource": "koala-data-lake-raw",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "encryption=true, versioning=false",
+              "resource": "koala-finance-exports",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "encryption=true, versioning=false",
+              "resource": "koala-cloudtrail-logs",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "encryption=true, versioning=false",
+              "resource": "koala-tmp-uploads",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "encryption=true, versioning=true",
+              "resource": "koala-backups-prod",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "encryption=true, versioning=true",
+              "resource": "koala-freight-manifests",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "111111111111"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "encryption=true, versioning=true",
+              "resource": "koala-customer-portal-assets",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            },
+            {
+              "reason": "encryption=true, versioning=true",
+              "resource": "koala-website-static",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "222222222222"
+                },
+                {
+                  "key": "region",
+                  "value": "ap-southeast-2"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.kf_s3_encrypted_versioned",
+          "description": "Koala Freight internal policy control (synthetic).",
+          "severity": "",
+          "tags": {
+            "cloud": "aws",
+            "framework": "koala_freight_custom",
+            "kf_control_id": "KF-04"
+          },
+          "title": "KF-04 S3 buckets have default encryption and versioning",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 2,
+            "ok": 2,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "https_only=true, public_blob_access=true",
+              "resource": "kfpublicsite",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-corp"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            },
+            {
+              "reason": "https_only=false, public_blob_access=false",
+              "resource": "kfdevscratch",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-dev"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            },
+            {
+              "reason": "https_only=true, public_blob_access=false",
+              "resource": "kfarchive",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-dev"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            },
+            {
+              "reason": "https_only=true, public_blob_access=false",
+              "resource": "kfcorpdocs",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-corp"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.kf_az_storage_secure",
+          "description": "Koala Freight internal policy control (synthetic).",
+          "severity": "",
+          "tags": {
+            "cloud": "azure",
+            "framework": "koala_freight_custom",
+            "kf_control_id": "KF-AZ-01"
+          },
+          "title": "KF-AZ-01 Azure storage: secure transfer required and no anonymous blob access",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 2,
+            "ok": 2,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "Allow Internet to port 3389",
+              "resource": "nsg-jump/allow-rdp",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-dev"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            },
+            {
+              "reason": "Allow 0.0.0.0/0 to port 22",
+              "resource": "nsg-dev/allow-ssh",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-corp"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            },
+            {
+              "reason": "Allow 10.20.0.0/16 to port 22",
+              "resource": "nsg-app/allow-ssh-vpn",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-dev"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            },
+            {
+              "reason": "Allow * to port 443",
+              "resource": "nsg-web/allow-https",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-corp"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.kf_az_nsg_admin_ports",
+          "description": "Koala Freight internal policy control (synthetic).",
+          "severity": "",
+          "tags": {
+            "cloud": "azure",
+            "framework": "koala_freight_custom",
+            "kf_control_id": "KF-AZ-02"
+          },
+          "title": "KF-AZ-02 Azure NSGs: no inbound 22/3389 from the internet",
+          "run_status": 4,
+          "run_error": ""
+        },
+        {
+          "summary": {
+            "alarm": 2,
+            "ok": 1,
+            "info": 0,
+            "skip": 0,
+            "error": 0
+          },
+          "results": [
+            {
+              "reason": "soft_delete=true, purge_protection=false",
+              "resource": "kv-koala-ci",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-corp"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            },
+            {
+              "reason": "soft_delete=false, purge_protection=false",
+              "resource": "kv-koala-dev",
+              "status": "alarm",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-dev"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            },
+            {
+              "reason": "soft_delete=true, purge_protection=true",
+              "resource": "kv-koala-prod",
+              "status": "ok",
+              "dimensions": [
+                {
+                  "key": "scope",
+                  "value": "sub-koala-corp"
+                },
+                {
+                  "key": "region",
+                  "value": "australiaeast"
+                }
+              ]
+            }
+          ],
+          "control_id": "control.kf_az_key_vault_recoverable",
+          "description": "Koala Freight internal policy control (synthetic).",
+          "severity": "",
+          "tags": {
+            "cloud": "azure",
+            "framework": "koala_freight_custom",
+            "kf_control_id": "KF-AZ-03"
+          },
+          "title": "KF-AZ-03 Azure Key Vaults: soft delete and purge protection on",
+          "run_status": 4,
+          "run_error": ""
+        }
+      ]
+    }
+  ],
+  "controls": null
+} 

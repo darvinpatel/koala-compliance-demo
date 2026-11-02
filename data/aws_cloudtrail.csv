@@ -1,0 +1,3 @@
+account_id,trail_name,home_region,is_multi_region,is_logging,log_file_validation,kms_encrypted
+111111111111,org-trail,ap-southeast-2,true,true,true,true
+222222222222,nonprod-trail,ap-southeast-2,true,true,true,false

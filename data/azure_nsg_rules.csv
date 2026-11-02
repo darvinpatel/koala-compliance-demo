@@ -1,0 +1,5 @@
+subscription_id,location,nsg_name,rule_name,direction,access,protocol,destination_port,source_prefix
+sub-koala-corp,australiaeast,nsg-web,allow-https,Inbound,Allow,Tcp,443,*
+sub-koala-dev,australiaeast,nsg-jump,allow-rdp,Inbound,Allow,Tcp,3389,Internet
+sub-koala-corp,australiaeast,nsg-dev,allow-ssh,Inbound,Allow,Tcp,22,0.0.0.0/0
+sub-koala-dev,australiaeast,nsg-app,allow-ssh-vpn,Inbound,Allow,Tcp,22,10.20.0.0/16

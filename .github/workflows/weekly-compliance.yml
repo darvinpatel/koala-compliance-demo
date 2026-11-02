@@ -1,0 +1,45 @@
+# Weekly compliance run (sketch). Runs the benchmarks, exports JSON, posts a summary card to Teams.
+# v0.1 runs on the synthetic CSVs in this repo. For production, see PATH-TO-PROD.md
+# (official aws/azure plugin, read-only OIDC role, turbot compliance mods).
+name: weekly-compliance
+
+on:
+  schedule:
+    - cron: "0 22 * * 0"   # 22:00 UTC Sunday = 09:00 Monday AEDT (08:00 AEST in winter)
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  compliance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}   # repo secret; step below skips if unset
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Steampipe, Powerpipe and the csv plugin
+        run: |
+          sudo /bin/sh -c "$(curl -fsSL https://steampipe.io/install/steampipe.sh)"
+          sudo /bin/sh -c "$(curl -fsSL https://powerpipe.io/install/powerpipe.sh)"
+          steampipe plugin install csv
+          steampipe -v && powerpipe -v
+
+      - name: Run benchmarks and export JSON/CSV
+        run: ./scripts/run_benchmarks.sh
+
+      - name: Build Teams Adaptive Card
+        run: python3 scripts/teams_card.py output/cis_aws_v300_subset.json output/essential_eight_ml1.json output/koala_freight_custom.json > output/teams-card.json
+
+      - name: Post to Teams
+        if: ${{ env.TEAMS_WEBHOOK_URL != '' }}
+        run: python3 scripts/teams_card.py --post output/cis_aws_v300_subset.json output/essential_eight_ml1.json output/koala_freight_custom.json
+
+      - name: Keep results as an artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: compliance-results
+          path: output/
+          retention-days: 90

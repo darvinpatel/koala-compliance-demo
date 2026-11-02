@@ -1,0 +1,7 @@
+tenant,user_principal_name,account_enabled,mfa_registered,is_privileged,last_sign_in_days
+koalafreight.onmicrosoft.com,alice.ng@koalafreight.example,true,true,false,5
+koalafreight.onmicrosoft.com,ben.okafor@koalafreight.example,true,true,true,100
+koalafreight.onmicrosoft.com,grace.li@koalafreight.example,true,true,false,5
+koalafreight.onmicrosoft.com,kate.nguyen@koalafreight.example,true,true,true,1
+koalafreight.onmicrosoft.com,admin.breakglass@koalafreight.example,true,true,false,1
+koalafreight.onmicrosoft.com,contractor.temp@koalafreight.example,true,true,false,5

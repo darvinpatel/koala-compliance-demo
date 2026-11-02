@@ -1,0 +1,3 @@
+account_id,account_name,snapshot_date,root_mfa_enabled,root_access_keys_present,password_min_length,password_reuse_prevention
+111111111111,koala-prod,2026-11-01,true,false,14,24
+222222222222,koala-nonprod,2026-11-01,false,true,8,0
