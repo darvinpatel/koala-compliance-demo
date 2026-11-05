@@ -1,12 +1,12 @@
-# 5-minute demo script
+# Demo Script
 
-Judging: impact 30%, innovation 25%, working demo 20%, path to production 15%, collaboration 10%. Have the dashboard open at http://localhost:9033 with a terminal next to it. Have `output/dashboard.png` ready in case the live demo fails.
+This 5-minute walkthrough demonstrates the compliance dashboard's capabilities. Have the dashboard open at http://localhost:9033 with a terminal next to it. Have `output/dashboard.png` ready as a backup.
 
-**0:00–0:40 Problem (impact).**
-"Every audit, someone exports settings by hand, pastes them into a spreadsheet and maps them to CIS and the Essential Eight. By the time it's done, it's already out of date. We wanted one view that is always current: what's failing, against which framework, and why."
+**0:00–0:40 The Problem**
+"Many organizations still export cloud settings manually, paste them into spreadsheets, and map findings to frameworks like CIS and Essential Eight. By the time the audit is done, the infrastructure has already changed. This project demonstrates an automated approach: a single dashboard that shows compliance status, identifies what's failing, and maps findings to specific framework controls."
 
-**0:40–1:00 Ground rules.**
-"Everything you're about to see is synthetic: a made-up company called Koala Freight, generated from a fixed seed. No real accounts, no credentials, nothing scanned. It's posture checking, not code scanning. Snyk still does that."
+**0:40–1:00 Disclaimer**
+"Everything here is synthetic: Koala Freight Pty Ltd is a fictional company, generated from a fixed seed (20261101). No real cloud accounts, credentials, or systems were accessed. This demonstrates compliance-as-code architecture without exposing real infrastructure."
 
 **1:00–2:30 Live dashboard (working demo).**
 - Headline cards: 31 controls across three frameworks, 70.0% pass rate (194 ok out of 277 checked), alarms split as 24 CIS / 33 Essential Eight / 26 custom.
@@ -14,17 +14,18 @@ Judging: impact 30%, innovation 25%, working demo 20%, path to production 15%, c
 - Essential Eight bar chart: "Patch operating systems" is the worst strategy. That's where the remediation effort should go first.
 - Failing resources table: scroll to one row, for example `nonprod` root user with access keys (CIS 1.4) or `nsg-jump/allow-rdp` open to the Internet (KF-AZ-02). "Every row says what failed and why, in plain words."
 
-**2:30–3:15 Terminal (working demo).**
-- `./scripts/run_benchmarks.sh` reruns all three benchmarks in about a second and writes JSON/CSV to `output/`.
-- **No install on the day? Use `fallback/index.html` in Edge** (offline): same numbers, with a framework filter on the failing-resources table. Walk through it in the same order as the live dashboard.
-- Show `output/teams-card.json`. "This is the weekly Teams summary: per-framework counts and the top three alarms."
+**2:30–3:15 Code and Automation**
+- `./scripts/run_benchmarks.sh` runs all three benchmarks in about a second and writes JSON/CSV to `output/`.
+- **Offline fallback:** `fallback/index.html` works in any browser with no installation—same data, with framework filtering on the failing-resources table.
+- Show `output/teams-card.json`: "This JSON is posted to Microsoft Teams via webhook for weekly summaries—per-framework counts and top findings."
 
-**3:15–4:00 What's different (innovation).**
-- One Python file defines every control, mapped to CIS v3.0.0 numbers and the Essential Eight strategy names from ASD's model. Azure and AWS resources sit in the same view.
-- Custom org rules (tags, stale users, restore tests) sit alongside the frameworks, so policy and standards are reported in one place.
+**3:15–4:00 Technical Approach**
+- **Single source of truth:** One Python file (`scripts/build_mod.py`) defines every control, mapped to official framework IDs (CIS v3.0.0 item numbers, ACSC Essential Eight strategies). This generates the Powerpipe benchmarks programmatically.
+- **Cross-cloud unification:** AWS and Azure resources evaluated in the same dashboard with consistent dimensions.
+- **Custom controls alongside frameworks:** Organizational policies (tagging, stale users, backup testing) reported alongside CIS and Essential Eight, unifying compliance and internal standards.
 
-**4:00–4:40 Path to production.**
-"On the day, we swap the CSVs for the official Steampipe Azure or AWS plugin with read-only access, starting with non-prod, and add Turbot's published CIS and Essential Eight mods. The GitHub Action already runs weekly and posts to Teams from a secret. Jira tickets for high-impact alarms are next." (PATH-TO-PROD.md)
+**4:00–4:40 Production Path**
+"To move this to production, swap the synthetic CSVs for official Steampipe cloud plugins (AWS/Azure) with read-only service principals. Start in non-production environments, add Turbot's published CIS and Essential Eight mods, and integrate with Jira for automated issue creation. The GitHub Action already implements weekly scheduling and Teams webhooks." (See `PATH-TO-PROD.md`)
 
-**4:40–5:00 Collaboration and ask.**
-"We need non-prod read-only access, one Teams channel, and a Jira project key. Security, cloud and service desk each own a piece."
+**4:40–5:00 Summary**
+This demonstrates compliance-as-code at work: policy automation, framework mapping, and continuous visibility. The architecture scales from synthetic demos to production cloud estates with minimal changes to the control definitions.

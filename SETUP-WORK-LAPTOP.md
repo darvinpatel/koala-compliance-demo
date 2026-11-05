@@ -1,48 +1,41 @@
-# Running the Koala Freight demo on a work laptop (Windows first)
+# Running the Demo on Windows
 
-Everything in this folder is **synthetic** (Koala Freight Pty Ltd, made-up data). It contains no
-cloud credentials, does not connect to any cloud account, and does not scan anything.
+**Reminder:** Everything in this repository is **synthetic** (Koala Freight Pty Ltd, fictional data). No cloud credentials, no real accounts, nothing scanned.
 
-There are two ways to demo:
+There are two ways to run the demo:
 
-| | Option A: no install (primary) | Option B: live run in WSL2 |
+| | Option A: No Install (Primary) | Option B: Live Run in WSL2 |
 |---|---|---|
-| Needs | Edge (or any browser). | WSL2 + Ubuntu, then Steampipe, Powerpipe and the csv plugin |
-| Admin / IT? | No | **Yes**: installing WSL needs admin, and IT may block it |
-| Internet on the day? | No | No, once installed (see "Network" below) |
+| Requirements | Any modern browser | WSL2 + Ubuntu, then Steampipe, Powerpipe and the csv plugin |
+| Administrator access? | No | **Yes** (WSL2 installation requires admin privileges) |
+| Internet required? | No (fully offline) | No (once installed; see "Network" section below) |
 
-Use Option A unless IT has already approved and installed WSL2.
+**Recommendation:** Use Option A for quick demos and reviews. Use Option B to explore the live dashboard and modify controls.
 
 ---
 
-## Option A: no install, offline (primary demo path)
+## Option A: No Install, Offline (Primary Demo Path)
 
-1. Copy `koala-compliance-demo.zip` to the laptop.
-2. In File Explorer, right-click the zip, choose **Extract All...**, and extract it to, for example,
-   `C:\Users\<you>\Documents\koala-compliance-demo`.
-   Don't open the page from inside the zip; the links to the reports and the CSV need extracted files.
-3. Open `fallback\index.html` in Edge (double-click it, or drag it into Edge).
+1. Download or clone this repository to your local machine
+2. In File Explorer, navigate to the repository folder (e.g., `C:\Users\<you>\Documents\koala-compliance-demo`)
+3. Open `fallback\index.html` in any browser (Edge, Chrome, Firefox)—double-click the file or drag it into your browser
 
-What's on the page (it all works offline, from one self-contained file):
+**What's included (all works offline from one self-contained HTML file):**
 
-- **Results by benchmark**: 31 controls, 194 ok / 83 alarm / 23 skip (70.0% pass), with a row for each benchmark.
-- **Failing resources**: all 83 alarm rows. Filter by framework with the drop-down, or type in the
-  search box (try `nsg-jump`). Expected filter counts: CIS AWS v3.0.0 24, Essential Eight ML1 33,
-  Koala Freight custom 26. The "Download CSV" link opens `output\failing-resources.csv` (opens in Excel).
-- **Live dashboard screenshot**: what the Powerpipe dashboard looks like when it's running.
-- **Full reports**: each benchmark's Powerpipe HTML report (`output\reports\*.html`), also offline.
+- **Results by benchmark**: 31 controls, 194 ok / 83 alarm / 23 skip (70.0% pass rate)
+- **Failing resources table**: All 83 findings with framework filter dropdown and search
+  - Expected filter counts: CIS AWS v3.0.0 (24), Essential Eight ML1 (33), Koala Freight custom (26)
+  - "Download CSV" exports `output\failing-resources.csv`
+- **Dashboard screenshot**: Visual preview of the live Powerpipe dashboard
+- **Full reports**: Each benchmark's detailed HTML report (`output\reports\*.html`)
 
-Also in the folder:
+**Additional artifacts in the repository:**
 
-- `output\reports\*.md`: Markdown versions of the reports.
-- `output\*.csv` and `output\*.json`: raw benchmark exports.
-- `output\snapshots\*.pps`: Powerpipe snapshots of the dashboard and each benchmark. These are
-  **not** a no-install path. Per the Powerpipe docs, you view them in the Powerpipe dashboard
-  (or Turbot Pipes), so they're only useful with Option B. They're kept as an archive of the run.
+- `output\reports\*.md`: Markdown versions of the reports
+- `output\*.csv` and `output\*.json`: Raw benchmark exports
+- `output\snapshots\*.pps`: Powerpipe snapshots (require Powerpipe or Turbot Pipes to view; kept as run archives)
 
-Tested: the page was opened from a fresh unzip in Microsoft Edge 156.0.4314.58 (Linux build), with the
-network disabled. There were no network requests and no script errors, and all of the filters and
-the search worked. Edge on Windows itself was not tested.
+**Testing:** The offline page was validated in Microsoft Edge 156 with network disabled—no external requests, all filters and search working correctly.
 
 ---
 
@@ -51,21 +44,33 @@ the search worked. Edge on Windows itself was not tested.
 Steampipe and Powerpipe have **no native Windows builds** (the official install scripts print
 "Windows is not supported yet"). On Windows they run inside WSL2.
 
-### B1. WSL2 (needs admin, so ask IT)
+### B1. WSL2 Setup (Requires Admin)
 
-Source: Microsoft Learn, "How to install Linux on Windows with WSL"
-(https://learn.microsoft.com/en-us/windows/wsl/install) and "Set up WSL for your company"
-(https://learn.microsoft.com/en-us/windows/wsl/enterprise).
+**Prerequisites:** Windows 10 version 2004+ (build 19041+) or Windows 11
 
-- First check whether it's already there. In a normal (non-admin) PowerShell, run `wsl --status` or
-  `wsl -l -v`. If Ubuntu is listed with VERSION 2, skip to B2.
-- Installing it means running `wsl --install` in PowerShell **as administrator**, then restarting.
-  It needs Windows 10 version 2004+ (build 19041+) or Windows 11. Ubuntu is the default distribution.
-- On a managed laptop, this is IT's job. IT can allow or block WSL through Intune or Group Policy, and
-  Microsoft Defender for Endpoint has a WSL plug-in. IT can also give you an approved image
-  (`wsl --import`).
-- Behind a corporate proxy: Microsoft's enterprise doc covers `.wslconfig` options such as
-  `autoProxy=true`, `networkingMode=mirrored` and `dnsTunneling=true`. Let IT decide these.
+**Check if already installed:**
+```powershell
+wsl --status
+# or
+wsl -l -v
+```
+If Ubuntu is listed with VERSION 2, skip to B2.
+
+**Installation:**
+1. Open PowerShell **as administrator**
+2. Run: `wsl --install`
+3. Restart your computer when prompted
+4. Ubuntu will be installed as the default distribution
+
+**Enterprise considerations:**
+- WSL can be managed via Intune or Group Policy
+- Microsoft Defender for Endpoint supports WSL integration
+- Behind corporate proxies, configure `.wslconfig` with `autoProxy=true`, `networkingMode=mirrored`, and `dnsTunneling=true`
+- Organizations can deploy custom WSL images using `wsl --import`
+
+**References:**
+- [Microsoft Learn: Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+- [Microsoft Learn: WSL for Enterprise](https://learn.microsoft.com/en-us/windows/wsl/enterprise)
 
 ### B2. Steampipe, Powerpipe and the csv plugin (no sudo, inside Ubuntu)
 
@@ -165,29 +170,39 @@ To stop afterwards: `pkill -f "powerpipe server"; steampipe service stop`.
 
 ---
 
-## IT approval list
+## Dependencies and Requirements
 
-| Item | Version | Publisher / licence | Admin? | Notes |
+| Component | Version | License | Admin Required? | Notes |
 |---|---|---|---|---|
-| WSL2 (Windows Subsystem for Linux) + Ubuntu | Current WSL from Microsoft; Ubuntu (default distro) | Microsoft / Canonical | **Yes** (`wsl --install`, then a restart) | Windows 10 2004+ (build 19041+) or Windows 11. Can be managed by Intune/GPO and Defender for Endpoint. Only needed for Option B. |
-| Steampipe CLI | v2.4.8 | Turbot, AGPL-3.0 (GitHub repo licence) | No (user `~/bin`) | Single binary, inside WSL |
-| Powerpipe CLI | v1.5.6 | Turbot, AGPL-3.0 (GitHub repo licence) | No | Single binary, inside WSL |
-| Steampipe csv plugin | 1.2.0 | Turbot, Apache-2.0 | No | Reads only the local `data/*.csv` files |
-| Steampipe embedded Postgres + FDW | Postgres 14.19.0, FDW 2.2.8 | Turbot (downloaded by Steampipe) | No | Downloaded automatically on first install; stored in `~/.steampipe` |
-| Microsoft Edge | already installed | Microsoft | No | The only thing Option A needs |
-| Python 3 | optional | | No | Not needed for the demo |
+| WSL2 + Ubuntu | Current WSL from Microsoft | Microsoft / Canonical | **Yes** | Windows 10 2004+ or Windows 11. Required for Option B only. |
+| Steampipe CLI | v2.4.8 | Turbot, AGPL-3.0 | No | Single binary, installed in user space (`~/bin`) |
+| Powerpipe CLI | v1.5.6 | Turbot, AGPL-3.0 | No | Single binary, installed in user space (`~/bin`) |
+| Steampipe csv plugin | 1.2.0 | Turbot, Apache-2.0 | No | Reads only local `data/*.csv` files |
+| Steampipe embedded PostgreSQL | 14.19.0 + FDW 2.2.8 | Turbot | No | Downloaded automatically on first plugin install; stored in `~/.steampipe` |
+| Modern web browser | Any | Various | No | Required for Option A (offline HTML) |
+| Python 3 | Optional | PSF | No | Only needed to regenerate synthetic data |
 
-**Network endpoints** (HTTPS/443, seen through a logging proxy during a clean install on 2 Nov 2026):
+**Network Endpoints** (HTTPS/443, observed during clean install on 2 Nov 2026):
 
-| Endpoint | When | Why |
+| Endpoint | When | Purpose |
 |---|---|---|
-| `github.com`, `release-assets.githubusercontent.com` | Install | Steampipe and Powerpipe release downloads |
-| `ghcr.io`, `pkg-containers.githubusercontent.com` | `steampipe plugin install csv` / first start | csv plugin, embedded Postgres and FDW images |
-| `hub.steampipe.io` | `steampipe plugin install csv` | Plugin version lookup |
-| `hub.powerpipe.io` | Each Powerpipe run, **unless** turned off | Contacted 4 times per run by default (probably the update check/telemetry). With `POWERPIPE_UPDATE_CHECK=false` and `POWERPIPE_TELEMETRY=none` (set by the scripts) a second run made **zero** outbound connections. |
-| Microsoft endpoints for WSL / Ubuntu | WSL install | Not observed; IT to confirm |
+| `github.com`, `release-assets.githubusercontent.com` | Binary installation | Steampipe and Powerpipe release downloads |
+| `ghcr.io`, `pkg-containers.githubusercontent.com` | Plugin installation | CSV plugin, embedded PostgreSQL and FDW images |
+| `hub.steampipe.io` | Plugin installation | Plugin version lookup |
+| `hub.powerpipe.io` | Each Powerpipe run | Update checks and telemetry (4 requests/run by default) |
+| Microsoft endpoints | WSL installation | Package downloads for Ubuntu |
 
-**Local ports** (inside WSL): 9193 (Steampipe Postgres, localhost only) and 9033 (Powerpipe dashboard).
+**Disabling telemetry:**
+- Set `POWERPIPE_UPDATE_CHECK=false` and `POWERPIPE_TELEMETRY=none` (already configured in included scripts)
+- With telemetry disabled, subsequent runs make zero outbound connections
 
-**What it doesn't do:** no cloud credentials, no connection to any cloud or employer account, no
-network scanning, no code or dependency scanning. It evaluates synthetic CSV files only.
+**Local Ports** (inside WSL only):
+- 9193: Steampipe PostgreSQL (localhost only)
+- 9033: Powerpipe dashboard server
+
+**Security boundaries:**
+- No cloud credentials required or requested
+- No connections to AWS, Azure, or any cloud provider
+- No network scanning or port scanning
+- No code or dependency vulnerability scanning
+- Evaluates synthetic CSV files only

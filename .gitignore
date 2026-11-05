@@ -1,4 +1,38 @@
-.DS_Store
+# Python
 .venv/
+venv/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Steampipe
+.steampipe/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local environment files
+.env
+.env.local
+
+# Secrets and credentials (extra safety)
+**/secrets/
+*.pem
+*.key
+credentials.json
+
+# Screenshots of secrets or sensitive data
+screenshots/secrets/
+*_secret.png
+*_credential.png

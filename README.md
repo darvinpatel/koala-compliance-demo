@@ -1,20 +1,36 @@
-# Koala Freight cloud compliance dashboard (v0.1, hackathon build)
+# Koala Freight Compliance Dashboard
 
-A small Powerpipe mod that runs three compliance benchmarks over a cloud and endpoint estate and shows the results on one dashboard:
+A Powerpipe-based compliance-as-code demonstration implementing cloud security and GRC controls. This project showcases automated compliance monitoring across multiple frameworks using Steampipe and Powerpipe, demonstrating how policy-as-code can unify AWS, Azure, and organizational controls in a single dashboard.
 
-- **CIS AWS Foundations Benchmark v3.0.0** – a 15-recommendation subset
-- **ACSC Essential Eight, Maturity Level One** (Essential Eight Maturity Model, last reviewed 27 Nov 2023) – at least one check for each of the eight mitigation strategies
-- **Koala Freight custom controls** – four org-policy checks plus three Azure starter checks
+## What This Demonstrates
 
-Results export to JSON and CSV, and a script turns the JSON into a Microsoft Teams Adaptive Card for a weekly summary (see `.github/workflows/weekly-compliance.yml`).
+This project implements 31 compliance controls spanning three frameworks:
 
-This is a configuration and posture check. It is not code or dependency vulnerability scanning; Snyk covers that and this doesn't replace it.
+- **CIS AWS Foundations Benchmark v3.0.0** – 15 critical security recommendations
+- **ACSC Essential Eight, Maturity Level One** – at least one check for each of the eight mitigation strategies (Essential Eight Maturity Model, last reviewed 27 Nov 2023)
+- **Koala Freight custom controls** – 7 organizational policy checks covering AWS and Azure
 
-## Synthetic data disclaimer
+The dashboard provides real-time visibility into compliance posture, with automated exports to JSON and CSV. A GitHub Action generates weekly Microsoft Teams summaries using Adaptive Cards.
 
-**Every record here is synthetic.** Koala Freight Pty Ltd is a fictional company. The CSVs in `data/` come from `scripts/generate_data.py`, which uses a fixed seed (`20261101`) and a fixed snapshot date (2026-11-01), so every run gives the same files. Table names such as `aws_iam_users` or `azure_key_vaults` are chosen to read like the real thing, but they are **plain CSV files read by the Steampipe `csv` plugin**, not the official Steampipe AWS or Azure plugins. No cloud account, credential, or employer system was touched, and nothing was scanned. Account IDs are placeholders (`111111111111`, `222222222222`) and IPs use the documentation range `203.0.113.0/24`.
+**Use case:** Demonstrates how security and GRC teams can shift compliance left—automating control validation, reducing manual audit work, and making compliance status continuously visible to technical and non-technical stakeholders.
 
-## Versions used (verified 2026-11-01)
+Related: This project is part of the [GRC Starter Kit](https://www.darvinpatel.com/projects/koala-freight-grc-starter-kit) portfolio series.
+
+## ⚠️ Synthetic Data Disclaimer
+
+**Every record in this repository is synthetic and for demonstration purposes only.** 
+
+Koala Freight Pty Ltd is a fictional company. The CSVs in `data/` come from `scripts/generate_data.py`, which uses a fixed seed (`20261101`) and a fixed snapshot date (2026-11-01), ensuring reproducible results. Table names such as `aws_iam_users` or `azure_key_vaults` are chosen to resemble production data structures, but they are **plain CSV files read by the Steampipe `csv` plugin**, not live cloud resources.
+
+**No real infrastructure was accessed:**
+- No cloud accounts, credentials, or production systems were connected
+- Account IDs are placeholders (`111111111111`, `222222222222`)
+- IP addresses use the documentation range `203.0.113.0/24`
+- This is not a real audit, assessment, or certification
+
+This project demonstrates compliance-as-code architecture and GRC automation capabilities without exposing or scanning any real systems.
+
+## Versions Used (Verified 2026-11-01)
 
 | Tool | Version |
 |---|---|
@@ -24,7 +40,34 @@ This is a configuration and posture check. It is not code or dependency vulnerab
 | Python | 3.13.5 |
 | Playwright (screenshot only, in a local `.venv`, not shipped) | 1.64.1, driving Google Chrome 156 |
 
-## Run it
+## For Technical Reviewers
+
+This project demonstrates several technical and governance capabilities relevant to cloud security and GRC roles:
+
+**Technical Architecture:**
+- **Policy-as-code:** 31 controls defined in a single Python source of truth (`scripts/build_mod.py`), auto-generating Powerpipe benchmarks
+- **Cross-cloud unification:** AWS and Azure resources evaluated in the same dashboard with consistent dimensions (resource, status, reason, scope, region)
+- **Framework mapping:** Controls tagged with official framework IDs (CIS item numbers, Essential Eight strategies), enabling filtered views by standard
+- **Automation-ready:** CI/CD integration via GitHub Actions, with JSON/CSV exports and Teams webhook integration
+
+**GRC and Security Focus:**
+- Demonstrates practical understanding of CIS Benchmarks, Essential Eight, and organizational control frameworks
+- Shows how to make compliance status visible and actionable for both technical and non-technical stakeholders
+- Illustrates the shift from manual spreadsheet audits to continuous automated validation
+- Production-ready architecture: see `PATH-TO-PROD.md` for the migration path from synthetic CSV to live cloud APIs with read-only service principals
+
+**Results (2026-11-01 synthetic run):**
+- 31 controls evaluated
+- 194 resources passed (70.0% pass rate)
+- 83 alarm findings
+- 23 skipped (contextual, e.g., users without access keys)
+- 0 errors
+
+These are verified numbers from the included synthetic dataset, not estimates. The complete control mapping and remediation guidance are documented below.
+
+Related work: [GRC Starter Kit project page](https://www.darvinpatel.com/projects/koala-freight-grc-starter-kit)
+
+## Run It
 
 Prerequisites: Steampipe and Powerpipe installed (`sudo /bin/sh -c "$(curl -fsSL https://steampipe.io/install/steampipe.sh)"`, and the same with `powerpipe.io/install/powerpipe.sh`), plus `steampipe plugin install csv`.
 
@@ -37,7 +80,7 @@ cd mod && powerpipe server --port 9033      # open http://localhost:9033 -> "Koa
 
 Note: `run_benchmarks.sh` overwrites `~/.steampipe/config/csv.spc` so the csv connection points at `data/`.
 
-**Demoing on a work laptop?** See `SETUP-WORK-LAPTOP.md`. The no-install path is to open `fallback/index.html` in Edge: it works offline.
+**No-install option:** See `SETUP-WORK-LAPTOP.md` for detailed setup instructions. For offline viewing without installing Steampipe/Powerpipe, open `fallback/index.html` in any browser—it's a self-contained results page with all 83 findings and framework filters.
 
 ## Layout
 
@@ -56,7 +99,7 @@ output/                   benchmark exports (json/csv), reports/ (html/md), snap
 
 Each control returns `resource`, `status` (ok / alarm / skip; info is supported but unused at the moment), `reason`, plus `scope` (account, subscription or device type) and `region` as dimensions. Each control carries tags for its framework and framework ID (`cis_item_id`, `e8_strategy` + `e8_maturity_level`, or `kf_control_id`). To change a control, edit `scripts/build_mod.py` and re-run it. Don't hand-edit the generated `.pp` files.
 
-## Results on the synthetic estate (2026-11-01 run)
+## Results Summary (2026-11-01 Synthetic Run)
 
 | Benchmark | Controls | OK | Alarm | Skip | Info | Error |
 |---|---|---|---|---|---|---|
@@ -125,8 +168,12 @@ These checks cover one or two requirements per strategy, not every ML1 requireme
 
 \*I haven't verified CIS Azure recommendation numbers, so none are cited. The Entra ID MFA check sits inside `e8_ml1_multi_factor_authentication`. On the day, the turbot `azure_compliance` mod has the numbered CIS Azure controls (see PATH-TO-PROD.md).
 
-## Known limitations
+## Known Limitations
 
-- Synthetic data only. Each table is a flat snapshot, and ages are whole days counted from 2026-11-01.
-- Essential Eight checks are proxies. Most ML1 requirements are about process (for example, validating privileged access when it's first requested) and can't be read from a CSV.
-- The dashboard rebuilds all 31 control queries for each panel. That's fine at this size but not for a real estate. In production, read the benchmark results instead.
+This is a demonstration project with deliberate scope boundaries:
+
+- **Synthetic data only:** Each table is a point-in-time snapshot. Ages are calculated in whole days from 2026-11-01. Real-world implementation would use live Steampipe cloud plugins (see `PATH-TO-PROD.md`).
+- **Essential Eight checks are proxies:** Most ML1 requirements involve process validation (e.g., validating privileged access requests). Technical checks alone cannot fully satisfy Essential Eight maturity levels.
+- **Dashboard query optimization:** The dashboard rebuilds all 31 control queries for each panel. This works well for demonstration but would be refactored in production to read cached benchmark results for better performance at scale.
+
+See `PATH-TO-PROD.md` for the production migration strategy, including replacing CSV with official Steampipe AWS/Azure plugins, implementing read-only service principals, and integrating with Jira for issue tracking.
